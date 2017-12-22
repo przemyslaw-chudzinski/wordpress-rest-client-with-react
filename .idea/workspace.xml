@@ -2,17 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a8843cc2-59ac-4223-942b-e5fc78893bff" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/components/Posts/PostsList.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/components/Posts/PostsList.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/containers/Blog/PostsByCategories/PostsByCategories.js" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/components/BlogSidebar/Categories/Categories.js" afterPath="$PROJECT_DIR$/src/components/BlogSidebar/Categories/Categories.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/Post/Categories/Category/Category.js" afterPath="$PROJECT_DIR$/src/components/Post/Categories/Category/Category.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/Post/Tags/Tags.css" afterPath="$PROJECT_DIR$/src/components/Post/Tags/Tags.css" />
-      <change beforePath="$PROJECT_DIR$/src/containers/Blog/Blog.js" afterPath="$PROJECT_DIR$/src/containers/Blog/Blog.js" />
-      <change beforePath="$PROJECT_DIR$/src/containers/Blog/Posts/Posts.css" afterPath="$PROJECT_DIR$/src/containers/Blog/Posts/Posts.css" />
-      <change beforePath="$PROJECT_DIR$/src/containers/Blog/Posts/Posts.js" afterPath="$PROJECT_DIR$/src/containers/Blog/Posts/Posts.js" />
-      <change beforePath="$PROJECT_DIR$/src/store/actions/posts.js" afterPath="$PROJECT_DIR$/src/store/actions/posts.js" />
+      <change beforePath="$PROJECT_DIR$/src/containers/Blog/PostsByCategories/PostsByCategories.js" afterPath="$PROJECT_DIR$/src/containers/Blog/PostsByCategories/PostsByCategories.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -45,8 +36,8 @@
       <file leaf-file-name="PostsByCategories.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/containers/Blog/PostsByCategories/PostsByCategories.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-691">
-              <caret line="39" column="74" lean-forward="false" selection-start-line="39" selection-start-column="68" selection-end-line="39" selection-end-column="74" />
+            <state relative-caret-position="638">
+              <caret line="92" column="94" lean-forward="true" selection-start-line="92" selection-start-column="94" selection-end-line="92" selection-end-column="94" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -337,12 +328,12 @@
       <workItem from="1513789592838" duration="26137000" />
       <workItem from="1513867031914" duration="1785000" />
       <workItem from="1513953743570" duration="45000" />
-      <workItem from="1513959303971" duration="11264000" />
+      <workItem from="1513959303971" duration="11889000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="134179000" />
+    <option name="totallyTimeSpent" value="134804000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -357,7 +348,7 @@
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32868218" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32799146" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -760,8 +751,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/containers/Blog/PostsByCategories/PostsByCategories.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-691">
-          <caret line="39" column="74" lean-forward="false" selection-start-line="39" selection-start-column="68" selection-end-line="39" selection-end-column="74" />
+        <state relative-caret-position="638">
+          <caret line="92" column="94" lean-forward="true" selection-start-line="92" selection-start-column="94" selection-end-line="92" selection-end-column="94" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>

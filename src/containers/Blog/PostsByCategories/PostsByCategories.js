@@ -23,10 +23,23 @@ class PostsByCategories extends Component {
         };
     }
 
+    componentWillReceiveProps(nextProps) {
+        if (nextProps.match.params.id !== this.props.match.params.id) {
+            this.loadCategory(nextProps.match.params.slug)
+                .then(() => {
+                    this.loadPosts(nextProps.match.params.id)
+                        .then(() => {
+                            this.props.hidePreloader();
+                            this.props.hideBlogSidebar();
+                        });
+                });
+        }
+    }
+
     componentDidMount() {
-        this.loadCategory()
+        this.loadCategory(this.props.match.params.slug)
             .then(() => {
-                this.loadPosts()
+                this.loadPosts(this.props.match.params.id)
                     .then(() => {
                         this.props.hidePreloader();
                         this.props.hideBlogSidebar();
@@ -34,18 +47,18 @@ class PostsByCategories extends Component {
             });
     }
 
-    loadCategory() {
+    loadCategory(categorySlug = "") {
         this.props.showPreloader();
-        if (this.props.match.params.slug) {
-            return axios.get('/categories?slug=' + this.props.match.params.slug)
+        if (categorySlug !== "" && categorySlug !== null && categorySlug !== undefined) {
+            return axios.get('/categories?slug=' + categorySlug)
                 .then(response => response.data[0])
                 .then(category => this.setState({category: category}));
         }
     }
 
-    loadPosts() {
-        if (this.props.match.params.id) {
-            return this.props.fetchPosts(this.state.perPage, this.state.offset, this.props.match.params.id)
+    loadPosts(categoryId = null) {
+        if (categoryId && categoryId !== "" && categoryId !== undefined) {
+            return this.props.fetchPosts(this.state.perPage, this.state.offset, categoryId);
         }
     }
 
