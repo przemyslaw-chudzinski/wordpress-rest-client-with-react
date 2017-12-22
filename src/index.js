@@ -15,7 +15,10 @@ import categoriesReducer from "./store/reducers/categories";
 import tagsReducer from "./store/reducers/tags";
 import axios from 'axios';
 
-axios.defaults.baseURL = 'http://localhost/wordpress-rest-api/wp-json/wp/v2';
+
+const baseURL = process.env.NODE_ENV === 'development' ? 'http://localhost/wordpress-rest-api/wp-json/wp/v2' : '';
+
+axios.defaults.baseURL = baseURL;
 
 const rootReducer = combineReducers({
     preloader: preloaderReducer,
