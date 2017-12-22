@@ -10,7 +10,7 @@ export const fetchTagsAction = (tags) => {
 
 export const fetchTags = () => {
     return dispatch => {
-        return axios.get('http://localhost/wordpress-rest-api/wp-json/wp/v2/tags')
+        return axios.get('/tags')
             .then(response => response.data)
             .then(tags => {
                 dispatch(fetchTagsAction(tags));

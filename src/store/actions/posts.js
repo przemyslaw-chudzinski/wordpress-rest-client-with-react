@@ -11,7 +11,7 @@ export const fetchPostsAction = (posts) => {
 
 export const fetchPosts = (perPage, offset) => {
     return dispatch => {
-        return axios.get('http://localhost/wordpress-rest-api/wp-json/wp/v2/posts?per_page=' + perPage + '&offset=' + offset)
+        return axios.get('/posts?per_page=' + perPage + '&offset=' + offset)
             .then(response => response.data)
             .then(posts => {
                 if (posts.length) {
@@ -33,7 +33,7 @@ export const fetchNextPostsAction = (posts) => {
 
 export const fetchNextPosts = (perPage, offset) => {
     return dispatch => {
-        return axios.get('http://localhost/wordpress-rest-api/wp-json/wp/v2/posts?per_page=' + perPage + '&offset=' + offset)
+        return axios.get('/posts?per_page=' + perPage + '&offset=' + offset)
             .then(response => response.data)
             .then(posts => {
                 if (posts.length) {

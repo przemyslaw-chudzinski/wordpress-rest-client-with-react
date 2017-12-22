@@ -10,7 +10,7 @@ export const fetchPagesAction = (pages) => {
 
 export const fetchPages = () => {
     return dispatch => {
-        return axios.get('http://localhost/wordpress-rest-api/wp-json/wp/v2/pages')
+        return axios.get('/pages')
             .then(response => response.data)
             .then(pages => {
                 dispatch(fetchPagesAction(pages));

@@ -10,7 +10,7 @@ export const fetchCategoriesAction = (categories) => {
 
 export const fetchCategories = () => {
     return dispatch => {
-        return axios.get('http://localhost/wordpress-rest-api/wp-json/wp/v2/categories')
+        return axios.get('/categories')
             .then(response => response.data)
             .then(categories => {
                 dispatch(fetchCategoriesAction(categories));

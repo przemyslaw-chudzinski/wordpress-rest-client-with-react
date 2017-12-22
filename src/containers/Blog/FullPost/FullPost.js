@@ -48,7 +48,7 @@ class FullPost extends Component {
     loadPost(postSlug = "") {
         this.props.showPreloader();
         if (postSlug !== "") {
-            return axios.get('http://localhost/wordpress-rest-api/wp-json/wp/v2/posts?slug=' + postSlug)
+            return axios.get('/posts?slug=' + postSlug)
                 .then(response => response.data[0])
                 .then(post => {
                     this.setState({post: post});

@@ -28,7 +28,7 @@ class FullPage extends Component {
     loadPage(pageSlug = "") {
         this.props.showPreloader();
         if (pageSlug !== "" && pageSlug !== null && pageSlug !== undefined) {
-            return axios.get('http://localhost/wordpress-rest-api/wp-json/wp/v2/pages?slug=' + pageSlug)
+            return axios.get('/pages?slug=' + pageSlug)
                 .then(response => response.data[0])
                 .then(page => {
                     this.setState({page: page});

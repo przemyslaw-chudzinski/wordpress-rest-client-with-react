@@ -24,7 +24,7 @@ class SearchPosts extends Component {
 
         if (value && value !== "" && value !== null) {
             this.setState({isLoading: true});
-            axios.get('http://localhost/wordpress-rest-api/wp-json/wp/v2/posts?per_page='+ config.perPage +'&search=' + value)
+            axios.get('/posts?per_page='+ config.perPage +'&search=' + value)
                 .then(response => response.data)
                 .then(searchResults => {
                     this.setState(prevState => {
