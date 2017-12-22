@@ -4,6 +4,7 @@ import { Select } from 'semantic-ui-react';
 import LoadMoreButton from "../../../components/LoadMoreButton/LoadMoreButton";
 import { connect } from 'react-redux';
 import * as actionCreators from '../../../store/actions/index';
+import {calculateOffset} from "../../../utils/utils";
 
 const options = [
     {key: 1, text: '12', value: 12},
@@ -42,17 +43,13 @@ class Posts extends Component {
             });
     }
 
-    calculateOffset(currentState) {
-        return (currentState.pageNumber - 1) * currentState.perPage;
-    }
-
     loadMore() {
         this.setState({
             isLoadingLoadMoreButton: true
         });
         const currentState = {...this.state};
         currentState.pageNumber++;
-        currentState.offset = this.calculateOffset(currentState);
+        currentState.offset = calculateOffset(currentState);
         this.props.fetchNextPosts(currentState.perPage, currentState.offset)
             .then(() => {
                 currentState.isLoadingLoadMoreButton = false;

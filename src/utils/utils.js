@@ -14,3 +14,7 @@ export const goToTopPage = () => {
         }, 300);
     }
 };
+
+export const calculateOffset = currentState => {
+    return (currentState.pageNumber - 1) * currentState.perPage;
+};

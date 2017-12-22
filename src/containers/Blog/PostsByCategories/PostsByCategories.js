@@ -4,6 +4,7 @@ import axios from 'axios';
 import {connect} from 'react-redux';
 import * as actionCreators from '../../../store/actions/index';
 import LoadMoreButton from "../../../components/LoadMoreButton/LoadMoreButton";
+import {calculateOffset} from "../../../utils/utils";
 
 
 const config = {
@@ -62,17 +63,13 @@ class PostsByCategories extends Component {
         }
     }
 
-    calculateOffset(currentState) {
-        return (currentState.pageNumber - 1) * currentState.perPage;
-    }
-
     loadMore() {
         this.setState({
             isLoadingLoadMoreButton: true
         });
         const currentState = {...this.state};
         currentState.pageNumber++;
-        currentState.offset = this.calculateOffset(currentState);
+        currentState.offset = calculateOffset(currentState);
         this.props.fetchNextPosts(currentState.perPage, currentState.offset, this.state.category.id)
             .then(() => {
                 currentState.isLoadingLoadMoreButton = false;

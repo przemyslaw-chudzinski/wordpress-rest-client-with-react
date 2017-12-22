@@ -3,7 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="a8843cc2-59ac-4223-942b-e5fc78893bff" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" afterPath="$PROJECT_DIR$/src/index.js" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" afterPath="$PROJECT_DIR$/src/App.js" />
+      <change beforePath="$PROJECT_DIR$/src/containers/Blog/Posts/Posts.js" afterPath="$PROJECT_DIR$/src/containers/Blog/Posts/Posts.js" />
+      <change beforePath="$PROJECT_DIR$/src/containers/Blog/PostsByCategories/PostsByCategories.js" afterPath="$PROJECT_DIR$/src/containers/Blog/PostsByCategories/PostsByCategories.js" />
+      <change beforePath="$PROJECT_DIR$/src/containers/Layout/Layout.css" afterPath="$PROJECT_DIR$/src/hoc/Layout/Layout.css" />
+      <change beforePath="$PROJECT_DIR$/src/containers/Layout/Layout.js" afterPath="$PROJECT_DIR$/src/hoc/Layout/Layout.js" />
+      <change beforePath="$PROJECT_DIR$/src/utils/utils.js" afterPath="$PROJECT_DIR$/src/utils/utils.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -21,22 +26,34 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="env.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/env.js">
+      <file leaf-file-name="utils.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/utils/utils.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1091">
-              <caret line="70" column="38" lean-forward="false" selection-start-line="70" selection-start-column="30" selection-end-line="70" selection-end-column="38" />
+            <state relative-caret-position="374">
+              <caret line="17" column="13" lean-forward="false" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/index.js">
+      <file leaf-file-name="Posts.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/containers/Blog/Posts/Posts.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="110">
-              <caret line="20" column="32" lean-forward="false" selection-start-line="20" selection-start-column="32" selection-end-line="20" selection-end-column="32" />
+            <state relative-caret-position="544">
+              <caret line="51" column="45" lean-forward="false" selection-start-line="51" selection-start-column="45" selection-end-line="51" selection-end-column="45" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PostsByCategories.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/containers/Blog/PostsByCategories/PostsByCategories.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="695">
+              <caret line="71" column="45" lean-forward="false" selection-start-line="71" selection-start-column="45" selection-end-line="71" selection-end-column="45" />
+              <folding>
+                <element signature="e#0#39#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -59,6 +76,7 @@
       <find>showPreloader</find>
       <find>actionCreateors</find>
       <find>FullPostContent</find>
+      <find>cal</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -99,7 +117,6 @@
         <option value="$PROJECT_DIR$/src/components/BlogSidebar/Pages/Pages.js" />
         <option value="$PROJECT_DIR$/src/components/Toolbar/Toolbar.js" />
         <option value="$PROJECT_DIR$/src/components/Post/Post.js" />
-        <option value="$PROJECT_DIR$/src/utils/utils.js" />
         <option value="$PROJECT_DIR$/src/store/actions/pages.js" />
         <option value="$PROJECT_DIR$/src/store/actions/tags.js" />
         <option value="$PROJECT_DIR$/src/containers/Blog/FullPost/FullPost.js" />
@@ -110,14 +127,15 @@
         <option value="$PROJECT_DIR$/src/components/Posts/Posts.js" />
         <option value="$PROJECT_DIR$/src/containers/Blog/Posts/Posts.css" />
         <option value="$PROJECT_DIR$/src/components/Posts/PostsList.css" />
-        <option value="$PROJECT_DIR$/src/containers/Blog/Posts/Posts.js" />
         <option value="$PROJECT_DIR$/src/components/Post/Categories/Category/Category.js" />
         <option value="$PROJECT_DIR$/src/containers/Blog/Blog.js" />
         <option value="$PROJECT_DIR$/src/components/Posts/PostsList.js" />
         <option value="$PROJECT_DIR$/src/store/actions/categories.js" />
         <option value="$PROJECT_DIR$/src/store/actions/posts.js" />
-        <option value="$PROJECT_DIR$/src/containers/Blog/PostsByCategories/PostsByCategories.js" />
         <option value="$PROJECT_DIR$/src/index.js" />
+        <option value="$PROJECT_DIR$/src/utils/utils.js" />
+        <option value="$PROJECT_DIR$/src/containers/Blog/Posts/Posts.js" />
+        <option value="$PROJECT_DIR$/src/containers/Blog/PostsByCategories/PostsByCategories.js" />
       </list>
     </option>
   </component>
@@ -173,38 +191,48 @@
             <path>
               <item name="wordpress-rest-theme" type="b2602c69:ProjectViewProjectNode" />
               <item name="wordpress-rest-theme" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="config" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="wordpress-rest-theme" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wordpress-rest-theme" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="wordpress-rest-theme" type="b2602c69:ProjectViewProjectNode" />
               <item name="wordpress-rest-theme" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="components" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="containers" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="wordpress-rest-theme" type="b2602c69:ProjectViewProjectNode" />
               <item name="wordpress-rest-theme" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="store" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="containers" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Blog" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="wordpress-rest-theme" type="b2602c69:ProjectViewProjectNode" />
               <item name="wordpress-rest-theme" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="store" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="actions" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="containers" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Blog" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Posts" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="wordpress-rest-theme" type="b2602c69:ProjectViewProjectNode" />
               <item name="wordpress-rest-theme" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="store" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="reducers" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="containers" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Blog" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="PostsByCategories" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="wordpress-rest-theme" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wordpress-rest-theme" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="hoc" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="wordpress-rest-theme" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wordpress-rest-theme" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="utils" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
@@ -227,6 +255,7 @@
       <recent name="C:\Users\przem\Desktop\react-projects\wordpress-rest-theme\src\components\BlogSidebar" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\przem\Desktop\react-projects\wordpress-rest-theme\src\hoc" />
       <recent name="C:\Users\przem\Desktop\react-projects\wordpress-rest-theme\src\components\Posts" />
       <recent name="C:\Users\przem\Desktop\react-projects\wordpress-rest-theme\src\components\BlogSidebar" />
       <recent name="C:\Users\przem\Desktop\react-projects\wordpress-rest-theme\src\store\actions" />
@@ -267,12 +296,12 @@
       <workItem from="1513789592838" duration="26137000" />
       <workItem from="1513867031914" duration="1785000" />
       <workItem from="1513953743570" duration="45000" />
-      <workItem from="1513959303971" duration="12672000" />
+      <workItem from="1513959303971" duration="13225000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="135587000" />
+    <option name="totallyTimeSpent" value="136140000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -479,14 +508,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/utils.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="15" column="2" lean-forward="true" selection-start-line="15" selection-start-column="2" selection-end-line="15" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Post/Post.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="682">
@@ -646,7 +667,7 @@
         <state relative-caret-position="770">
           <caret line="35" column="124" lean-forward="false" selection-start-line="35" selection-start-column="124" selection-end-line="35" selection-end-column="124" />
           <folding>
-            <element signature="e#0#45#0" expanded="true" />
+            <element signature="e#0#45#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -656,28 +677,16 @@
         <state relative-caret-position="132">
           <caret line="6" column="35" lean-forward="true" selection-start-line="6" selection-start-column="35" selection-end-line="6" selection-end-column="35" />
           <folding>
-            <element signature="e#0#39#0" expanded="true" />
+            <element signature="e#0#39#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/Blog/PostsByCategories/PostsByCategories.js">
+    <entry file="file://$PROJECT_DIR$/src/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1905">
-          <caret line="92" column="69" lean-forward="false" selection-start-line="92" selection-start-column="63" selection-end-line="92" selection-end-column="69" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/Blog/Posts/Posts.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="26" column="22" lean-forward="false" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="440">
+          <caret line="35" column="0" lean-forward="true" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -689,11 +698,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/index.js">
+    <entry file="file://$PROJECT_DIR$/src/utils/utils.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="20" column="32" lean-forward="false" selection-start-line="20" selection-start-column="32" selection-end-line="20" selection-end-column="32" />
+        <state relative-caret-position="374">
+          <caret line="17" column="13" lean-forward="false" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/Blog/Posts/Posts.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="51" column="45" lean-forward="false" selection-start-line="51" selection-start-column="45" selection-end-line="51" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/Blog/PostsByCategories/PostsByCategories.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="695">
+          <caret line="71" column="45" lean-forward="false" selection-start-line="71" selection-start-column="45" selection-end-line="71" selection-end-column="45" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
