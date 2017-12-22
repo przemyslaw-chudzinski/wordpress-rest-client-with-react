@@ -11,7 +11,7 @@ class Categories extends Component {
                 <div className="Categories">
                     <h3>{this.props.header}</h3>
                     <ul>
-                        {this.props.categories.map(category => <Category key={category.id} link="">{category.name}</Category>)}
+                        {this.props.categories.map(category => <Category key={category.id} category={category}>{category.name}</Category>)}
                     </ul>
                 </div>
             );

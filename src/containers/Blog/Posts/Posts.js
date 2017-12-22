@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
-import Post from "../../../components/Post/Post";
-import './Posts.css';
+import PostsList from '../../../components/Posts/PostsList';
 import { Select } from 'semantic-ui-react';
 import LoadMoreButton from "../../../components/LoadMoreButton/LoadMoreButton";
 import { connect } from 'react-redux';
@@ -43,12 +42,6 @@ class Posts extends Component {
             });
     }
 
-    showFullPostHandler(postSlug = "") {
-        if (postSlug !== "") {
-            this.props.history.push({pathname: '/post/' + postSlug});
-        }
-    }
-
     calculateOffset(currentState) {
         return (currentState.pageNumber - 1) * currentState.perPage;
     }
@@ -69,13 +62,6 @@ class Posts extends Component {
 
     render() {
 
-        let posts = null;
-        if (this.props.posts.length) {
-            posts = this.props.posts.map(post => <Post
-                                                     key={post.id} post={post}
-                                                     showFullPost={this.showFullPostHandler.bind(this)} />);
-        }
-
         return (
             <div className="Posts">
                 <h1>Latest posts</h1>
@@ -83,7 +69,7 @@ class Posts extends Component {
                     <Select options={options} placeholder={this.state.perPage.toString()} onChange={this.onChangePerPageHandler.bind(this)} />
                 </div>
                 <div className="Posts-list">
-                    {posts}
+                    <PostsList posts={this.props.posts} />
                 </div>
                 <LoadMoreButton
                     isLoading={this.state.isLoadingLoadMoreButton}

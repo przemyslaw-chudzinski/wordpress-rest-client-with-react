@@ -9,9 +9,9 @@ export const fetchPostsAction = (posts) => {
     };
 };
 
-export const fetchPosts = (perPage, offset) => {
+export const fetchPosts = (perPage, offset, categoryId = null) => {
     return dispatch => {
-        return axios.get('/posts?per_page=' + perPage + '&offset=' + offset)
+        return axios.get('/posts?per_page=' + perPage + '&offset=' + offset + (categoryId ? '&categories=' + categoryId : ''))
             .then(response => response.data)
             .then(posts => {
                 if (posts.length) {
@@ -31,9 +31,9 @@ export const fetchNextPostsAction = (posts) => {
 };
 
 
-export const fetchNextPosts = (perPage, offset) => {
+export const fetchNextPosts = (perPage, offset, categoryId = null) => {
     return dispatch => {
-        return axios.get('/posts?per_page=' + perPage + '&offset=' + offset)
+        return axios.get('/posts?per_page=' + perPage + '&offset=' + offset + (categoryId ? '&categories=' + categoryId : ''))
             .then(response => response.data)
             .then(posts => {
                 if (posts.length) {
