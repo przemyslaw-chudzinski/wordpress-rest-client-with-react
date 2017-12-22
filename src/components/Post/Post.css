@@ -1,0 +1,12 @@
+.Post {
+    cursor: pointer;
+    position: relative;
+}
+
+.Post .header {
+    margin-bottom: 7px;
+}
+
+.Post .image {
+    overflow: hidden;
+}

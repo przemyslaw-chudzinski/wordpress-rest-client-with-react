@@ -1,0 +1,7 @@
+.Tag {
+    margin-right: 5px !important;
+}
+
+.Tag:last-child {
+    margin-right: 0px;
+}

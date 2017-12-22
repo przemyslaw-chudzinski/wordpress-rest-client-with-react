@@ -1,0 +1,15 @@
+.Categories {
+    margin-bottom: 20px !important;
+}
+
+.Categories ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-flow: column;
+}
+
+.Categories ul li {
+    margin-bottom: 10px !important;
+}

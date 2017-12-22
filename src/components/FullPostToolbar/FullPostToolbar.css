@@ -1,0 +1,29 @@
+.FullPostToolbar {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 60px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    border-top: 1px solid #e2e2e2;
+    transition: bottom .5s ease-out;
+}
+
+.FullPostToolbar .PrevNext {
+    width: 30%;
+}
+
+.FullPostToolbar .CurrentPost {
+    width: 60%;
+}
+
+.FullPostToolbarOpen {
+    bottom: 0px;
+}
+
+.FullPostToolbarClosed {
+    bottom: -60px;
+}

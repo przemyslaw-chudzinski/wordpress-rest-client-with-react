@@ -1,0 +1,16 @@
+.SearchPosts {
+
+}
+
+.SearchPosts .results {
+    width: 100% !important;
+}
+
+.SearchPosts .input {
+    width: 200px;
+    transition: all .3s ease-out;
+}
+
+.SearchPostsLarge .input {
+    width: 400px;
+}

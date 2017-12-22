@@ -1,0 +1,17 @@
+.PrevNext {
+    cursor: pointer;
+    text-align: center;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all .2s ease-out;
+}
+
+.PrevNext h4 {
+    margin-bottom: 0px;
+}
+
+.PrevNext:hover {
+    background-color: #f2f2f2;
+}

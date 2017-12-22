@@ -1,0 +1,16 @@
+.FullPostContent {
+    min-height: 800px !important;
+    padding-bottom: 60px;
+}
+
+.FullPostContent .post-info span, .FullPostContent .post-info strong {
+    margin-right: 20px;
+}
+
+.FullPostContent .PostThumbnail img {
+    max-width: 100%;
+}
+
+.FullPostContent .content img {
+    max-width: 100%;
+}
