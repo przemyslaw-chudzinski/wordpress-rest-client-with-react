@@ -5,10 +5,10 @@ import About from "../../../components/Post/About/About";
 import Categories from "../../../components/Post/Categories/Categories";
 import FullPostToolbar from "../../../components/FullPostToolbar/FullPostToolbar";
 import Tags from "../../../components/Post/Tags/Tags";
-import $ from 'jquery';
 import {connect} from 'react-redux';
 import * as actionCreators from '../../../store/actions/index';
 import Image from "../../../components/Image/Image";
+import {goToTopPage, parseDate} from "../../../utils/utils";
 
 class FullPost extends Component {
 
@@ -23,7 +23,7 @@ class FullPost extends Component {
     componentDidUpdate() {
         if (this.state.post && this.state.post.slug && this.state.post.slug !== this.props.match.params.slug){
             this.loadPost(this.props.match.params.slug)
-                .then(() => this.goToTopPage());
+                .then(() => goToTopPage());
         }
     }
 
@@ -41,17 +41,6 @@ class FullPost extends Component {
         }
     }
 
-    goToTopPage() {
-        const $bodyHtml = $('html, body');
-        const currentScrollTop = $bodyHtml.scrollTop();
-        if (currentScrollTop > 50) {
-            $bodyHtml.animate({
-                scrollTop: 0 + 'px'
-            }, 300);
-        }
-    }
-
-
     componentDidMount() {
         this.loadPost(this.props.match.params.slug);
     }
@@ -66,12 +55,6 @@ class FullPost extends Component {
                     this.props.hidePreloader();
                 });
         }
-    }
-
-    /* TODO: Refaktoryzacja */
-    parseDate(format) {
-        const d = new Date(format);
-        return d.getDate() + '-' + (d.getMonth() + 1) + '-' + d.getFullYear();
     }
 
     render() {
@@ -90,7 +73,7 @@ class FullPost extends Component {
                     </div>
                     <h1>{this.state.post.title.rendered}</h1>
                     <div className="post-info">
-                        <span>Opublikowano: {this.parseDate(this.state.post.date)}</span>
+                        <span>Opublikowano: {parseDate(this.state.post.date)}</span>
                         <strong>Autor: {this.state.post.post_author.name}</strong>
                         {this.state.post.categories.length ? <span>Kategorie: <Categories categories={this.state.post.categories} /></span> : null}
                         {this.state.post.tags ? <Tags tags={this.state.post.tags} /> : null}

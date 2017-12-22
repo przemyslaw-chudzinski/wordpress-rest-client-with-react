@@ -3,7 +3,7 @@ import axios from 'axios';
 import Image from "../../../components/Image/Image";
 import * as actionCreators from '../../../store/actions/index';
 import {connect} from 'react-redux';
-import $ from 'jquery';
+import {goToTopPage} from "../../../utils/utils";
 
 class FullPage extends Component {
 
@@ -21,18 +21,7 @@ class FullPage extends Component {
     componentDidUpdate() {
         if (this.state.page && this.state.page.slug && this.state.page.slug !== this.props.match.params.slug){
             this.loadPage(this.props.match.params.slug)
-                .then(() => this.goToTopPage());
-        }
-    }
-
-    /* TODO: Refaktor */
-    goToTopPage() {
-        const $bodyHtml = $('html, body');
-        const currentScrollTop = $bodyHtml.scrollTop();
-        if (currentScrollTop > 50) {
-            $bodyHtml.animate({
-                scrollTop: 0 + 'px'
-            }, 300);
+                .then(() => goToTopPage());
         }
     }
 

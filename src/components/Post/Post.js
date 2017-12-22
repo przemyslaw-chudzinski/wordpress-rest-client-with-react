@@ -3,14 +3,9 @@ import './Post.css';
 import PropTypes from 'prop-types';
 import Categories from "./Categories/Categories";
 import Image from "../Image/Image";
+import {parseDate} from "../../utils/utils";
 
 class Post extends Component {
-
-    /* TODO: Refaktoryzacja */
-    parseDate(format) {
-        const d = new Date(format);
-        return d.getDate() + '-' + (d.getMonth() + 1) + '-' + d.getFullYear();
-    }
 
     render() {
 
@@ -34,7 +29,7 @@ class Post extends Component {
                     <div className="content">
                         <a className="header">{this.props.post.title.rendered}</a>
                         <div className="meta">
-                            <span>{this.parseDate(this.props.post.date)}</span>
+                            <span>{parseDate(this.props.post.date)}</span>
                             <strong>{this.props.post.post_author.name}</strong>
                         </div>
                         <div className="description" dangerouslySetInnerHTML={{__html:this.props.post.excerpt.rendered.slice(0, 100)}} />
