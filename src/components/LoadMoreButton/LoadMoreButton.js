@@ -1,25 +1,16 @@
-import React, {Component} from 'react';
+import React from 'react';
 import {Button} from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import './LoadMoreButton.css';
 
-class LoadMoreButton extends Component {
-
-    render() {
-        const { click, isLoading, label, disabled } = this.props;
-        return (
-            <Button
-                fluid
-                disabled={disabled}
-                className="LoadMoreButton"
-                onClick={click.bind(this)}
-                loading={isLoading}>
-                {label}
-            </Button>
-        );
-    }
-
-}
+export const LoadMoreButton = props => <Button
+    fluid
+    disabled={props.disabled}
+    className="LoadMoreButton"
+    onClick={event => props.click(event)}
+    loading={props.isLoading}>
+    {props.label}
+</Button>;
 
 LoadMoreButton.propTypes = {
     isLoading: PropTypes.bool,

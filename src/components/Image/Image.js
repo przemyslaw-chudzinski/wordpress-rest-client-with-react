@@ -1,24 +1,11 @@
-import React, {Component, Fragment} from 'react';
+import React, {Fragment} from 'react';
 import PropTypes from 'prop-types';
 
-class Image extends Component {
-
-    getAndPrepareProps(prop = "") {
-        return prop === false || prop === true || prop === "" || prop === undefined ? "" : prop;
-    }
-
-    render() {
-        return (
-            <Fragment>
-                <img
-                    src={this.getAndPrepareProps(this.props.source)}
-                    alt={this.getAndPrepareProps(this.props.alt)}
-                    title={this.getAndPrepareProps(this.props.title)}/>
-            </Fragment>
-        );
-    }
-
-}
+export const Image = props => props.source &&  <Fragment><img
+    src={props.source}
+    alt={props.alt | ""}
+    title={props.title || ""} />
+</Fragment>;
 
 Image.propTypes = {
     title: PropTypes.string,

@@ -1,22 +1,16 @@
-import React, {Component} from 'react';
+import React from 'react';
 import * as actionCreators from "../../store/actions/index";
 import {Icon} from 'semantic-ui-react';
 import {connect} from 'react-redux';
 import './BlogSidebarButton.css';
 import PropTypes from 'prop-types';
 
-class BlogSidebarButton extends Component {
+export const BlogSidebarButton = props => (
+    <div className="item BlogSidebarButton" onClick={() => props.showBlogSidebar()}>
+        <Icon name="bars"/>
+    </div>
+);
 
-    render() {
-        const {showBlogSidebar} = this.props;
-        return (
-            <div className="item BlogSidebarButton" onClick={showBlogSidebar.bind(this)}>
-                <Icon name="bars"/>
-            </div>
-        );
-    }
-
-}
 BlogSidebarButton.propTypes = {
     showBlogSidebar: PropTypes.func
 };

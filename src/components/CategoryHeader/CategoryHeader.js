@@ -1,27 +1,21 @@
-import React, {Component} from 'react';
+import React from 'react';
 import './CategoryHeader.css';
 import PropTypes from 'prop-types';
 import h1 from "eslint-plugin-jsx-a11y/src/util/implicitRoles/h1";
 
-class CategoryHeader extends Component {
-
-    render() {
-        const {title, description, image} = this.props;
-        return (
-            <div className="CategoryHeader">
-                {image ? (
-                    <div className="image">
-                        <img src={image} alt=""/>
-                    </div>
-                ) : null}
-                <div className="content">
-                    <h1>Kategoria: {title}</h1>
-                    {description ? <p>{description}</p> : null}
-                </div>
+export const CategoryHeader = props => (
+    <div className="CategoryHeader">
+        {props.image ? (
+            <div className="image">
+                <img src={props.image} alt=""/>
             </div>
-        );
-    }
-}
+        ) : null}
+        <div className="content">
+            <h1>Kategoria: {props.title}</h1>
+            {props.description ? <p>{props.description}</p> : null}
+        </div>
+    </div>
+);
 
 CategoryHeader.propTypes = {
     title: PropTypes.string,

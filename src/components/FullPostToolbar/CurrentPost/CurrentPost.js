@@ -1,20 +1,13 @@
-import React, {Component} from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import './CurrentPost.css';
 
-class CurrentPost extends Component {
-
-    render() {
-        const {postTitle} = this.props;
-        return (
-            <div className="CurrentPost">
-                <h4>Aktualnie czytasz: </h4>
-                <div>{postTitle}</div>
-            </div>
-        );
-    }
-
-}
+export const CurrentPost = props => (
+    <div className="CurrentPost">
+        <h4>Aktualnie czytasz: </h4>
+        <div>{props.postTitle}</div>
+    </div>
+);
 
 CurrentPost.propTypes = {
     postTitle: PropTypes.string

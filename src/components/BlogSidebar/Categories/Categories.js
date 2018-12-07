@@ -1,23 +1,16 @@
-import React, {Component} from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import Category from "../../Post/Categories/Category/Category";
 import './Categories.css';
 
-class Categories extends Component {
-
-    render() {
-        const {categories, header} = this.props;
-        return (
-            <div className="Categories">
-                {header ? <h3>{header}</h3> : null}
-                <ul>
-                    {categories && categories.length && categories.map(category => <Category key={category.id} category={category}>{category.name}</Category>)}
-                </ul>
-            </div>
-        );
-    }
-
-}
+export const Categories = props => (
+    <div className="Categories">
+        {props.header ? <h3>{props.header}</h3> : null}
+        <ul>
+            {props.categories && props.categories.length && props.categories.map(category => <Category key={category.id} category={category}>{category.name}</Category>)}
+        </ul>
+    </div>
+);
 
 Categories.propTypes = {
     categories: PropTypes.arrayOf(PropTypes.object),

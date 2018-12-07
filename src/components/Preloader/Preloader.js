@@ -1,24 +1,15 @@
-import React, {Component} from 'react';
+import React from 'react';
 import {Dimmer, Loader} from 'semantic-ui-react';
 import {connect} from 'react-redux';
 import './Preloader.css';
 
-class Preloader extends Component {
-
-    render() {
-        const {loading} = this.props;
-        return (
-            <div className="Preloader">
-                <Dimmer
-                    page
-                    active={loading}>
-                    <Loader size="big"/>
-                </Dimmer>
-            </div>
-        );
-    }
-
-}
+export const Preloader = ({loading}) => <div className="Preloader">
+    <Dimmer
+        page
+        active={loading}>
+        <Loader size="big"/>
+    </Dimmer>
+</div>;
 
 const mapStateToProps = state => {
     return {
