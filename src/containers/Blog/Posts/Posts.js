@@ -24,8 +24,14 @@ class Posts extends Component {
     loadPosts() {
         this.props.showPreloader();
         this.props.fetchPosts(this.state.perPage, this.state.offset)
-            .then(() => this.props.hidePreloader())
-            .catch(() => this.props.hidePreloader());
+            .then(() => {
+                this.props.hidePreloader();
+                this.props.hideBlogSidebar();
+            })
+            .catch(() => {
+                this.props.hidePreloader();
+                this.props.hideBlogSidebar();
+            });
     }
 
     loadMore() {
@@ -77,7 +83,8 @@ const mapDispatchToProps = dispatch => {
         showPreloader: () => dispatch(actionCreators.showPreloader()),
         hidePreloader: () => dispatch(actionCreators.hidePreloader()),
         fetchPosts: (perPage, offset) => dispatch(actionCreators.fetchPosts(perPage, offset)),
-        fetchNextPosts: (perPage, offset) => dispatch(actionCreators.fetchNextPosts(perPage, offset))
+        fetchNextPosts: (perPage, offset) => dispatch(actionCreators.fetchNextPosts(perPage, offset)),
+        hideBlogSidebar: () => dispatch(actionCreators.hideBlogSidebar())
     };
 };
 

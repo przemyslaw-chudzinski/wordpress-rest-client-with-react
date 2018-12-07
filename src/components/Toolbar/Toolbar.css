@@ -4,3 +4,23 @@
     justify-content: space-between;
     align-items: center;
 }
+
+.Toolbar .SearchPosts {
+    display: none;
+}
+
+@media only screen and (min-width: 1200px) {
+    .Toolbar .SearchPosts {
+        display: block;
+    }
+}
+
+.Toolbar .item__menu {
+    display: none !important;
+}
+
+@media only screen and (min-width: 1200px) {
+    .Toolbar .item__menu {
+        display: block !important;
+    }
+}

@@ -11,6 +11,7 @@ class Pages extends Component {
                 <div className="Pages">
                     <h3>{this.props.header}</h3>
                     <ul>
+                        <Page main>Strona Główna</Page>
                         {this.props.pages.map(page => <Page key={page.id} slug={page.slug}>{page.title.rendered}</Page>)}
                     </ul>
                 </div>

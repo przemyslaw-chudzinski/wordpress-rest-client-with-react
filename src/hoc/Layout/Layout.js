@@ -7,6 +7,7 @@ import BlogSidebar from "../../components/BlogSidebar/BlogSidebar";
 class Layout extends Component {
 
     render() {
+
         return (
             <div className="Layout">
                 <Toolbar/>
@@ -20,5 +21,6 @@ class Layout extends Component {
     }
 
 }
+
 
 export default Layout;

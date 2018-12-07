@@ -4,16 +4,16 @@ import './BlogSidebar.css';
 import {connect} from 'react-redux';
 import * as actionCreators from '../../store/actions/index';
 import TagsCloud from "./TagsCloud/TagsCloud";
-import Pages from "./Pages/Pages";
 import Categories from "./Categories/Categories";
 import CloseButton from "./CloseButton/CloseButton";
+import Pages from "./Pages/Pages";
 
 class BlogSidebar extends Component {
 
     componentDidMount() {
-        this.props.fetchPages();
         this.props.fetchCategories();
         this.props.fetchTags();
+        this.props.fetchPages();
     }
 
     render() {
@@ -23,8 +23,8 @@ class BlogSidebar extends Component {
                     as={Segment}
                     animation="overlay"
                     visible={this.props.isVisible}>
+                    <Pages pages={this.props.pages}/>
                     <CloseButton closeSidebar={this.props.hideBlogSidebar}/>
-                    <Pages pages={this.props.pages} header="Dodatkowe strony"/>
                     <Categories categories={this.props.categories} header="Główne tematy"/>
                     <TagsCloud tags={this.props.tags} header="Tagi"/>
                 </Sidebar>
@@ -37,18 +37,18 @@ class BlogSidebar extends Component {
 const mapStateToProps = state => {
     return {
         isVisible: state.blogSidebar.isVisible,
-        pages: state.pages.pages,
         categories: state.categories.categories,
-        tags: state.tags.tags
+        tags: state.tags.tags,
+        pages: state.pages.pages
     };
 };
 
 const mapDispatchToProps = dispatch => {
     return {
         hideBlogSidebar: () => dispatch(actionCreators.hideBlogSidebar()),
-        fetchPages: () => dispatch(actionCreators.fetchPages()),
         fetchCategories: () => dispatch(actionCreators.fetchCategories()),
-        fetchTags: () => dispatch(actionCreators.fetchTags())
+        fetchTags: () => dispatch(actionCreators.fetchTags()),
+        fetchPages: () => dispatch(actionCreators.fetchPages())
     };
 };
 

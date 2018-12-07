@@ -9,7 +9,7 @@ class Category extends Component {
         let elem = <li className="ui teal label">{this.props.children}</li>;
 
         if (this.props.category) {
-           elem = <li className="ui teal label"><Link  to={{
+           elem = <li className="ui teal label Category"><Link  to={{
                pathname: "/category/" + this.props.category.id + "/" + this.props.category.slug
            }}>{this.props.children}</Link></li>;
         }

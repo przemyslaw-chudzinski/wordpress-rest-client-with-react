@@ -1,12 +1,26 @@
 .PostsList {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    flex-flow: column;
+}
+
+@media only screen and (min-width: 1200px) {
+    .PostsList {
+        display: flex;
+        flex-flow: row;
+        justify-content: space-between;
+    }
 }
 
 .PostsList .card {
-    width: 32% !important;
+    width: 100% !important;
     margin: 14px 0 !important;
+}
+
+@media only screen and (min-width: 1200px) {
+    .PostsList .card {
+        max-width: 32% !important;
+        margin: 14px 0 !important;
+    }
 }
 
 .PostsList .Categories {
