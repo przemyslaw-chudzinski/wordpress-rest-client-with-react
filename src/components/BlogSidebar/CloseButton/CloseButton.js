@@ -5,9 +5,8 @@ import './CloseButton.css';
 
 class CloseButton extends Component {
     render() {
-        return (
-            <div className="CloseButton" onClick={this.props.closeSidebar}><Icon name="chevron left"/></div>
-        )
+        const {closeSidebar} = this.props;
+        return <div className="CloseButton" onClick={closeSidebar.bind(this)}><Icon name="chevron left"/></div>
     }
 }
 

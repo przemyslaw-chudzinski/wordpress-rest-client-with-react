@@ -5,13 +5,13 @@ import PropTypes from 'prop-types';
 class Category extends Component {
 
     render() {
-
+        const {children, category} = this.props;
         let elem = <li className="ui teal label">{this.props.children}</li>;
 
-        if (this.props.category) {
+        if (category) {
            elem = <li className="ui teal label Category"><Link  to={{
-               pathname: "/category/" + this.props.category.id + "/" + this.props.category.slug
-           }}>{this.props.children}</Link></li>;
+               pathname: "/category/" + category.id + "/" + category.slug
+           }}>{children}</Link></li>;
         }
 
         return elem;

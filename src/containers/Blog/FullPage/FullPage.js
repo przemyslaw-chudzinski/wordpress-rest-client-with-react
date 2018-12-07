@@ -19,47 +19,38 @@ class FullPage extends Component {
     }
 
     componentDidUpdate() {
-        if (this.state.page && this.state.page.slug && this.state.page.slug !== this.props.match.params.slug){
-            this.loadPage(this.props.match.params.slug)
-                .then(() => goToTopPage());
-        }
+        const {page} = this.state;
+        const {match} = this.props;
+        page && page.slug && page.slug !== match.params.slug && this.loadPage(match.params.slug).then(() => goToTopPage());
     }
 
-    loadPage(pageSlug = "") {
+    loadPage(pageSlug = null) {
         this.props.showPreloader();
-        if (pageSlug !== "" && pageSlug !== null && pageSlug !== undefined) {
-            return axios.get('/pages?slug=' + pageSlug)
-                .then(response => response.data[0])
-                .then(page => {
-                    this.setState({page: page});
-                    this.props.hideBlogSidebar();
-                    this.props.hidePreloader();
-                });
-        }
+        return pageSlug && pageSlug !== '' ? axios.get('/pages?slug=' + pageSlug)
+            .then(response => response.data[0])
+            .then(page => {
+                this.setState({page: page});
+                this.props.hideBlogSidebar();
+                this.props.hidePreloader();
+            }) : null;
     }
 
     render() {
+        const {page} = this.state;
+        let fullImage = null;
 
-        if (this.state.page) {
-            let fullImage = null;
-            if (this.state.page.thumbnail) {
-                fullImage = <Image
-                    source={this.state.page.thumbnail.full}
-                    alt={this.state.page.thumbnail.alt}/>
-            }
-            return (
-                <div className="FullPageContent">
-                    <div className="PostThumbnail">
-                        {fullImage}
-                    </div>
-                    <h1>{this.state.page.title.rendered}</h1>
-                    <div className="ui divider" />
-                    <div className="content"
-                    dangerouslySetInnerHTML={{__html:this.state.page.content.rendered}} />
+        page && page.thumbnail && page.thumbnail.full ? (fullImage =  <Image source={page.thumbnail.full} alt={page.thumbnail.alt}/>) : null;
+
+        return page && (
+            <div className="FullPageContent">
+                <div className="PostThumbnail">
+                    {fullImage}
                 </div>
-            );
-        }
-        return null;
+                <h1>{page.title.rendered}</h1>
+                <div className="ui divider" />
+                <div className="content" dangerouslySetInnerHTML={{__html:page.content.rendered}} />
+            </div>
+        );
     }
 }
 

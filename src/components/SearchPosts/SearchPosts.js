@@ -18,52 +18,37 @@ class SearchPosts extends Component {
             results: [],
             onFocus: false
         };
-        this.timeoutHandler = null;
+        this._timeoutHandler = null;
     }
 
     fetchPosts(value) {
-        axios.get('/posts?per_page='+ config.perPage +'&search=' + value)
+        return axios.get('/posts?per_page='+ config.perPage +'&search=' + value)
             .then(response => response.data)
             .then(searchResults => {
-                this.setState(prevState => {
-                    const newSearchResults = searchResults.map(result => {
-
-                        let thumbnail = null;
-                        if (result.thumbnail) {
-                            thumbnail = result.thumbnail.fi_50x50;
-                        }
-
-                        return {
-                            title: result.title.rendered,
-                            image: thumbnail,
-                            description: result.post_author.name,
-                            slug: result.slug,
-                            post_id: result.id
-                        };
-                    });
+                const results = searchResults && searchResults.length && searchResults.map(result => {
                     return {
-                        results: newSearchResults
+                        title: result.title.rendered,
+                        image: result.thumbnail ? result.thumbnail.fi_50x50 : null,
+                        description: result.post_author.name,
+                        slug: result.slug,
+                        post_id: result.id
                     };
                 });
-                this.setState({
-                    isLoading: false
-                });
+                this.setState({results, isLoading: false});
             });
     }
 
     onSearchChangeHandler(e, { value }) {
-
         if (value && value !== "" && value !== null) {
             this.setState({isLoading: true});
-            clearTimeout(this.timeoutHandler);
-            this.timeoutHandler = setTimeout(() => this.fetchPosts(value), 400);
+            clearTimeout(this._timeoutHandler);
+            this._timeoutHandler = setTimeout(() => this.fetchPosts(value), 400);
         }
     }
 
     onResultSelectHandler(e, { result }) {
-        if (result.slug && result.slug !== "") {
-            this.props.history.push({pathname: '/post/' + result.slug});
-        }
+        const {history} = this.props;
+        result.slug && result.slug !== "" && history.push({pathname: '/post/' + result.slug});
     }
 
     onFocusHandler() {
@@ -78,11 +63,8 @@ class SearchPosts extends Component {
     }
 
     render() {
-
-        let classes = ['SearchPosts'];
-        if (this.state.onFocus) {
-            classes = ['SearchPosts', 'SearchPostsLarge']
-        }
+        const {results, isLoading, onFocus} = this.state;
+        let classes = onFocus ? ['SearchPosts', 'SearchPostsLarge'] : ['SearchPosts'];
 
         return (
             <div className={classes.join(' ')}>
@@ -91,9 +73,9 @@ class SearchPosts extends Component {
                     onResultSelect={this.onResultSelectHandler.bind(this)}
                     onFocus={this.onFocusHandler.bind(this)}
                     onBlur={this.onBlurHandler.bind(this)}
-                    results={this.state.results}
+                    results={results}
                     minCharacters={config.minCharacters}
-                    loading={this.state.isLoading}/>
+                    loading={isLoading}/>
             </div>
         );
     }

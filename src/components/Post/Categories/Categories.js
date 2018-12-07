@@ -6,16 +6,10 @@ import './Categories.css';
 class Categories extends Component {
 
     render() {
-
-        let categories = null;
-
-        if (this.props.categories.length) {
-            categories = this.props.categories.map(category => <Category key={category.term_id}>{category.name}</Category>)
-        }
-
-        return (
+        const {categories} = this.props;
+        return categories && categories.length && (
             <ul className="Categories">
-                {categories}
+                {categories.map(category => <Category key={category.term_id}>{category.name}</Category>)}
             </ul>
         );
     }

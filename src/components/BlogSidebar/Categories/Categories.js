@@ -6,17 +6,15 @@ import './Categories.css';
 class Categories extends Component {
 
     render() {
-        if (this.props.categories && this.props.categories.length) {
-            return (
-                <div className="Categories">
-                    <h3>{this.props.header}</h3>
-                    <ul>
-                        {this.props.categories.map(category => <Category key={category.id} category={category}>{category.name}</Category>)}
-                    </ul>
-                </div>
-            );
-        }
-        return null;
+        const {categories, header} = this.props;
+        return (
+            <div className="Categories">
+                {header ? <h3>{header}</h3> : null}
+                <ul>
+                    {categories && categories.length && categories.map(category => <Category key={category.id} category={category}>{category.name}</Category>)}
+                </ul>
+            </div>
+        );
     }
 
 }

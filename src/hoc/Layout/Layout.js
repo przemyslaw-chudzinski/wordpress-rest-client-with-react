@@ -7,12 +7,12 @@ import BlogSidebar from "../../components/BlogSidebar/BlogSidebar";
 class Layout extends Component {
 
     render() {
-
+        const {children} = this.props;
         return (
             <div className="Layout">
                 <Toolbar/>
                 <div className="ui container">
-                    {this.props.children}
+                    {children}
                 </div>
                 <Preloader />
                 <BlogSidebar />

@@ -9,17 +9,19 @@ class FullPostToolbar extends Component {
 
     render() {
 
+        const {show, goToPost, post, showFullPostToolbarButton} = this.props;
+
         let classes = ['FullPostToolbar', 'FullPostToolbarOpen'];
-        if (!this.props.show) {
+        if (!show) {
             classes = ['FullPostToolbar', 'FullPostToolbarClosed'];
         }
 
         return (
             <div className={classes.join(' ')}>
-                <PrevNextPost goToPost={this.props.goToPost.bind(this)} post={this.props.post.prev_post} direction="prev" />
-                <CurrentPost postTitle={this.props.post.title.rendered}/>
-                <PrevNextPost goToPost={this.props.goToPost.bind(this)} direction="next" post={this.props.post.next_post} />
-                <ToolbarToggleButton clickHandler={this.props.showFullPostToolbarButton.bind(this)}/>
+                <PrevNextPost goToPost={goToPost.bind(this)} post={post.prev_post} direction="prev" />
+                <CurrentPost postTitle={post.title.rendered}/>
+                <PrevNextPost goToPost={goToPost.bind(this)} direction="next" post={post.next_post} />
+                <ToolbarToggleButton open={show} clickHandler={showFullPostToolbarButton.bind(this)}/>
             </div>
         );
     }

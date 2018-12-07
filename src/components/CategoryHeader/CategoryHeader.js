@@ -6,9 +6,7 @@ import h1 from "eslint-plugin-jsx-a11y/src/util/implicitRoles/h1";
 class CategoryHeader extends Component {
 
     render() {
-
         const {title, description, image} = this.props;
-
         return (
             <div className="CategoryHeader">
                 {image ? (
@@ -18,7 +16,7 @@ class CategoryHeader extends Component {
                 ) : null}
                 <div className="content">
                     <h1>Kategoria: {title}</h1>
-                   <p>{description}</p>
+                    {description ? <p>{description}</p> : null}
                 </div>
             </div>
         );

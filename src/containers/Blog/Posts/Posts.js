@@ -35,9 +35,7 @@ class Posts extends Component {
     }
 
     loadMore() {
-        this.setState({
-            isLoadingLoadMoreButton: true
-        });
+        this.setState({isLoadingLoadMoreButton: true});
         const currentState = {...this.state};
         currentState.pageNumber++;
         currentState.offset = calculateOffset(currentState);
@@ -49,22 +47,16 @@ class Posts extends Component {
     }
 
     render() {
-
         const {posts} = this.props;
         const {isLoadingLoadMoreButton, perPage} = this.state;
 
         return (
             <div className="Posts">
                 <h1>Najnowsze wpisy</h1>
-                <div className="Posts-list">
-                    <PostsList posts={posts} />
-                </div>
+                <PostsList posts={posts} />
                 {posts && posts.length && posts.length >= perPage ?
-                    <LoadMoreButton
-                    label="Pokaż więcej"
-                    isLoading={isLoadingLoadMoreButton}
-                    click={this.loadMore.bind(this)} /> : null}
-
+                    <LoadMoreButton label="Pokaż więcej" isLoading={isLoadingLoadMoreButton} click={this.loadMore.bind(this)} />
+                    : null}
             </div>
         );
     }

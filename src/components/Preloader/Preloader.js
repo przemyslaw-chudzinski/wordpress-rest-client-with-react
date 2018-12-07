@@ -6,11 +6,12 @@ import './Preloader.css';
 class Preloader extends Component {
 
     render() {
+        const {loading} = this.props;
         return (
             <div className="Preloader">
                 <Dimmer
                     page
-                    active={this.props.loading}>
+                    active={loading}>
                     <Loader size="big"/>
                 </Dimmer>
             </div>

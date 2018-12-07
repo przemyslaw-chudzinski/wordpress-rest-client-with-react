@@ -21,78 +21,67 @@ class FullPost extends Component {
     }
 
     componentDidUpdate() {
-        if (this.state.post && this.state.post.slug && this.state.post.slug !== this.props.match.params.slug){
-            this.loadPost(this.props.match.params.slug)
-                .then(() => goToTopPage());
-        }
+        const {post} = this.state;
+        const {match} = this.props;
+        post && post.slug && post.slug !== match.params.slug && this.loadPost(this.props.match.params.slug).then(() => goToTopPage());
     }
 
     showFullPostToolbarHandler() {
-        this.setState(prevState => {
-            return {
-                showFullPostToolbar: !prevState.showFullPostToolbar
-            };
-        });
+        this.setState(prevState => ({showFullPostToolbar: !prevState.showFullPostToolbar}));
     }
 
-    goToPostHandler(postSlug = "") {
-        if (postSlug !== "") {
-            this.props.history.push({pathname: '/post/' + postSlug});
-        }
+    goToPostHandler(postSlug = null) {
+        postSlug && postSlug !== '' && this.props.history.push({pathname: '/post/' + postSlug});
     }
 
     componentDidMount() {
         this.loadPost(this.props.match.params.slug);
     }
 
-    loadPost(postSlug = "") {
+    loadPost(postSlug = null) {
         this.props.showPreloader();
-        if (postSlug !== "") {
-            return axios.get('/posts?slug=' + postSlug)
-                .then(response => response.data[0])
-                .then(post => {
-                    this.setState({post: post});
-                    this.props.hidePreloader();
-                });
-        }
+        return postSlug && postSlug !== '' ? axios.get('/posts?slug=' + postSlug)
+            .then(response => response.data[0])
+            .then(post => {
+                this.setState({post: post});
+                this.props.hidePreloader();
+            }) : null;
     }
 
     render() {
+        const {post, showFullPostToolbar} = this.state;
+        let fullImage = null;
 
-        if (this.state.post) {
-            let fullImage = null;
-            if (this.state.post.thumbnail && this.state.post.thumbnail.full) {
-                fullImage = <Image
-                    source={this.state.post.thumbnail.full}
-                    alt={this.state.post.thumbnail.alt}/>;
-            }
-            return (
-                <div className="FullPostContent">
-                    <div className="PostThumbnail">
-                        {fullImage}
-                    </div>
-                    <h1>{this.state.post.title.rendered}</h1>
-                    <div className="post-info">
-                        <span>Opublikowano: {parseDate(this.state.post.date)}</span>
-                        <strong>Autor: {this.state.post.post_author.name}</strong>
-                        {this.state.post.categories.length ? <span>Kategorie: <Categories categories={this.state.post.categories} /></span> : null}
-                        {this.state.post.tags ? <Tags tags={this.state.post.tags} /> : null}
-                    </div>
-                    <div className="ui divider" />
-                    <div className="content"
-                         dangerouslySetInnerHTML={{__html:this.state.post.content.rendered}} />
-                    <About
-                        description={this.state.post.post_author.description}
-                        author={this.state.post.post_author.name}/>
-                    <FullPostToolbar
-                        showFullPostToolbarButton={this.showFullPostToolbarHandler.bind(this)}
-                        show={this.state.showFullPostToolbar}
-                        goToPost={this.goToPostHandler.bind(this)}
-                        post={this.state.post}/>
+        post && post.thumbnail && post.thumbnail.full ? (fullImage =  <Image source={post.thumbnail.full} alt={post.thumbnail.alt}/>) : null;
+
+        return post && (
+            <div className="FullPostContent">
+                {/* Thumbnail */}
+                <div className="PostThumbnail">
+                    {fullImage}
                 </div>
-            );
-        }
-        return null;
+                {/* Post title */}
+                <h1>{post.title.rendered}</h1>
+                {/* Post meta data */}
+                <div className="post-info">
+                    {post.post_date ? <span>Opublikowano: {parseDate(post.date)}</span> : null}
+                    {post.post_author ? <strong>Autor: {post.post_author.name}</strong> : null}
+                    {post.categories.length ? <span>Kategorie: <Categories categories={post.categories} /></span> : null}
+                    {post.tags ? <Tags tags={post.tags} /> : null}
+                </div>
+                <div className="ui divider" />
+                {/* Post content */}
+                <div className="content" dangerouslySetInnerHTML={{__html:post.content.rendered}} />
+                {/* About author */}
+                <About author={post.post_author}/>
+                {/* Toolbar on the bottom of the page */}
+                <FullPostToolbar
+                    showFullPostToolbarButton={this.showFullPostToolbarHandler.bind(this)}
+                    show={showFullPostToolbar}
+                    goToPost={this.goToPostHandler.bind(this)}
+                    post={post}/>
+            </div>
+        );
     }
 
 }

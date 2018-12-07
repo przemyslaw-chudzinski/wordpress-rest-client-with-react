@@ -6,9 +6,7 @@ import './LoadMoreButton.css';
 class LoadMoreButton extends Component {
 
     render() {
-
         const { click, isLoading, label, disabled } = this.props;
-
         return (
             <Button
                 fluid

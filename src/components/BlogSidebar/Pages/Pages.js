@@ -6,24 +6,23 @@ import './Pages.css';
 class Pages extends Component {
 
     render() {
-        if (this.props.pages && this.props.pages.length) {
-            return (
-                <div className="Pages">
-                    <h3>{this.props.header}</h3>
-                    <ul>
-                        <Page main>Strona Główna</Page>
-                        {this.props.pages.map(page => <Page key={page.id} slug={page.slug}>{page.title.rendered}</Page>)}
-                    </ul>
-                </div>
-            );
-        }
-        return null;
+        const {header, pages, mainPageLabel} = this.props;
+        return (
+            <div className="Pages">
+                {header ? <h3>{header}</h3> : null}
+                <ul>
+                    <Page main>{mainPageLabel || 'Strona Główna'}</Page>
+                    {pages && pages.length &&pages.map(page => <Page key={page.id} slug={page.slug}>{page.title.rendered}</Page>)}
+                </ul>
+            </div>
+        )
     }
 }
 
 Pages.propTypes = {
     pages: PropTypes.arrayOf(PropTypes.object),
-    header: PropTypes.string
+    header: PropTypes.string,
+    mainPageLabel: PropTypes.string
 };
 
 export default Pages;

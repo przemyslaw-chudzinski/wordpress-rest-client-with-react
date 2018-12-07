@@ -5,10 +5,11 @@ import './CurrentPost.css';
 class CurrentPost extends Component {
 
     render() {
+        const {postTitle} = this.props;
         return (
             <div className="CurrentPost">
                 <h4>Aktualnie czytasz: </h4>
-                <div>{this.props.postTitle}</div>
+                <div>{postTitle}</div>
             </div>
         );
     }

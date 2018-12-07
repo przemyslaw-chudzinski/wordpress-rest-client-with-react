@@ -3,7 +3,6 @@ import './Post.css';
 import PropTypes from 'prop-types';
 import Categories from "./Categories/Categories";
 import Image from "../Image/Image";
-import {parseDate} from "../../utils/utils";
 
 class Post extends Component {
 
@@ -12,42 +11,36 @@ class Post extends Component {
     }
 
     render() {
+        const {showFullPost, post} = this.props;
+        let thumbnail = <Image source="http://placehold.it/300x180" alt="Miniaturka" title="miniaturka"/>;
 
-        let thumbnail = <Image
-                            source="http://placehold.it/300x180"
-                            alt="Miniaturka"
-                            title="miniaturka"/>;
+        post.thumbnail && post.thumbnail.medium ? thumbnail = <Image source={post.thumbnail.fi_300x180} alt={post.thumbnail.alt} /> : null;
 
-        if (this.props.post.thumbnail.medium) {
-            thumbnail = <Image
-                source={this.props.post.thumbnail.fi_300x180}
-                alt={this.props.post.thumbnail.alt} />
-        }
-
-        if (this.props.post) {
-            return (
-                <div className="ui card Post" onClick={this.props.showFullPost.bind(this, this.props.post.slug)}>
-                    <div className="image">
-                        {thumbnail}
-                    </div>
-                    <div className="content">
-                        <a className="header">{this.props.post.title.rendered}</a>
-                        <div className="meta">
-                            <strong>Autor: {this.props.post.post_author.name}</strong>
-                        </div>
-                        <div className="description" dangerouslySetInnerHTML={{__html:this.getExcerpt()}} />
-                    </div>
-                    <div className="extra content">
-                        <a>
-                            <i className="comments icon"></i>
-                            22 Comments
-                        </a>
-                    </div>
-                    <Categories categories={this.props.post.categories} />
+        return post && (
+            <div className="ui card Post" onClick={showFullPost.bind(this, post.slug)}>
+                {/* Post thumbnail */}
+                <div className="image">
+                    {thumbnail}
                 </div>
-            );
-        }
-        return null;
+                <div className="content">
+                    <a className="header">{post.title.rendered}</a>
+                    {/* Post meta */}
+                    <div className="meta">
+                        <strong>Autor: {post.post_author.name}</strong>
+                    </div>
+                    <div className="description" dangerouslySetInnerHTML={{__html:this.getExcerpt()}} />
+                </div>
+                {/* Post comments */}
+                <div className="extra content">
+                    <a>
+                        <i className="comments icon"></i>
+                        22 Comments
+                    </a>
+                </div>
+                {/* Post categories */}
+                <Categories categories={post.categories} />
+            </div>
+        );
     }
 
 }

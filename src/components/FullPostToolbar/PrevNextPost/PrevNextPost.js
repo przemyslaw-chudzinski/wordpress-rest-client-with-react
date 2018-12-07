@@ -6,21 +6,15 @@ import {Icon} from 'semantic-ui-react';
 class PrevNextPost extends Component {
 
     render() {
-
+        const {direction, post} = this.props;
         let arrow_left = <Icon name="chevron left" />;
         let arrow_right = <Icon name="chevron right" />;
 
-        if (this.props.post && this.props.post.slug && this.props.post.slug !== "") {
-            return (
-                <div className="PrevNext" onClick={this.props.goToPost.bind(this, this.props.post.slug)}>
-                    <h4>{this.props.direction === 'prev' ? arrow_left : null}{this.props.post ? this.props.post.title : null} {this.props.direction === 'next' ? arrow_right : null}</h4>
-                </div>
-            );
-        }
-
-        return (
-            <div className="PrevNext"></div>
-        );
+        return post && post.slug && post.slug !== "" ? (
+            <div className="PrevNext" onClick={this.props.goToPost.bind(this, post.slug)}>
+                <h4>{direction === 'prev' ? arrow_left : null}{post ? post.title : null} {direction === 'next' ? arrow_right : null}</h4>
+            </div>
+        ) : <div className="PrevNext" />;
     }
 
 }

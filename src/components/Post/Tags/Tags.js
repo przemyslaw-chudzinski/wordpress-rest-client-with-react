@@ -6,12 +6,10 @@ import PropTypes from 'prop-types';
 class Tags extends Component {
 
     render() {
-
-        const tags = this.props.tags.map(tag => <Tag key={tag.term_id} tag={tag}/>);
-
-        return (
+        const {tags} = this.props;
+        return tags && tags.length && (
             <ul className="Tags">
-                {tags}
+                {tags.map(tag => <Tag tag={tag} key={tag.term_id} />)}
             </ul>
         );
     }

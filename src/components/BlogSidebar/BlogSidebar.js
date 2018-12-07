@@ -17,16 +17,17 @@ class BlogSidebar extends Component {
     }
 
     render() {
+        const {isVisible, pages, hideBlogSidebar, categories, tags} = this.props;
         return (
             <div className="BlogSidebar">
                 <Sidebar
                     as={Segment}
                     animation="overlay"
-                    visible={this.props.isVisible}>
-                    <Pages pages={this.props.pages}/>
-                    <CloseButton closeSidebar={this.props.hideBlogSidebar}/>
-                    <Categories categories={this.props.categories} header="Główne tematy"/>
-                    <TagsCloud tags={this.props.tags} header="Tagi"/>
+                    visible={isVisible}>
+                    <Pages pages={pages}/>
+                    <CloseButton closeSidebar={hideBlogSidebar}/>
+                    <Categories categories={categories} header="Główne tematy"/>
+                    <TagsCloud tags={tags} header="Chmura tagów"/>
                 </Sidebar>
             </div>
         );

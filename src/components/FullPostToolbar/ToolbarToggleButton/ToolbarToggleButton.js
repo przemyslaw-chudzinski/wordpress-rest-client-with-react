@@ -6,9 +6,13 @@ import {Icon} from 'semantic-ui-react';
 class ToolbarToggleButton extends Component {
 
     render() {
+        const {clickHandler, open} = this.props;
+        const closeButton = <Icon name="close" className="icon-btn"/>;
+        const openButton = <Icon name="angle up" className="icon-btn"/>;
+
         return (
-            <div className="ToolbarToggleButton" onClick={this.props.clickHandler.bind(this)}>
-                <Icon name="close" className="icon-btn"/>
+            <div className="ToolbarToggleButton" onClick={clickHandler.bind(this)}>
+                {open ? closeButton : openButton }
             </div>
         );
     }
@@ -16,7 +20,8 @@ class ToolbarToggleButton extends Component {
 }
 
 ToolbarToggleButton.propTypes = {
-    clickHandler: PropTypes.func
+    clickHandler: PropTypes.func,
+    open: PropTypes.bool
 };
 
 export default ToolbarToggleButton;

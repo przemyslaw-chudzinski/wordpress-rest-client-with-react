@@ -6,15 +6,13 @@ import './TagsCloud.css';
 class TagsCloud extends Component {
 
     render() {
-        if (this.props.tags && this.props.tags.length) {
-            return (
-                <div className="TagsCloud">
-                    <h3>{this.props.header}</h3>
-                    {this.props.tags.map(tag => <Tag key={tag.id} tag={tag}/>)}
-                </div>
-            );
-        }
-        return null;
+        const {header, tags} = this.props;
+        return (
+            <div className="TagsCloud">
+                {header ? <h3>{header}</h3> : null}
+                {tags && tags.length && tags.map(tag => <Tag key={tag.id} tag={tag}/>)}
+            </div>
+        );
     }
 
 }

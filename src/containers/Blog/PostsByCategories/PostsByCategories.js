@@ -22,26 +22,28 @@ class PostsByCategories extends Component {
     }
 
     componentWillReceiveProps(nextProps) {
-        if (nextProps.match.params.id !== this.props.match.params.id) {
+        const {match, hidePreloader, hideBlogSidebar} = this.props;
+        if (nextProps.match.params.id !== match.params.id) {
             this.props.clearPosts();
             this.loadCategory(nextProps.match.params.slug)
                 .then(() => {
                     this.loadPosts(nextProps.match.params.id)
                         .then(() => {
-                            this.props.hidePreloader();
-                            this.props.hideBlogSidebar();
+                            hidePreloader();
+                            hideBlogSidebar();
                         });
                 });
         }
     }
 
     componentDidMount() {
-        this.loadCategory(this.props.match.params.slug)
+        const {match, hidePreloader, hideBlogSidebar} = this.props;
+        this.loadCategory(match.params.slug)
             .then(() => {
-                this.loadPosts(this.props.match.params.id)
+                this.loadPosts(match.params.id)
                     .then(() => {
-                        this.props.hidePreloader();
-                        this.props.hideBlogSidebar();
+                        hidePreloader();
+                        hideBlogSidebar();
                     });
             });
     }
@@ -56,9 +58,9 @@ class PostsByCategories extends Component {
     }
 
     loadPosts(categoryId = null) {
-        if (categoryId && categoryId !== "" && categoryId !== undefined) {
-            return this.props.fetchPosts(this.state.perPage, this.state.offset, categoryId);
-        }
+        const {perPage, offset} = this.state;
+        const {fetchPosts} = this.props;
+        return categoryId && categoryId !== "" ? fetchPosts(perPage, offset, categoryId) :  null;
     }
 
     loadMore() {

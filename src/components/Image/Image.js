@@ -1,24 +1,20 @@
-import React, {Component} from 'react';
-import Helper from "../../hoc/Helper";
+import React, {Component, Fragment} from 'react';
 import PropTypes from 'prop-types';
 
 class Image extends Component {
 
     getAndPrepareProps(prop = "") {
-        if (prop === false || prop === true || prop === "" || prop === undefined) {
-            return "";
-        }
-        return prop;
+        return prop === false || prop === true || prop === "" || prop === undefined ? "" : prop;
     }
 
     render() {
         return (
-            <Helper>
+            <Fragment>
                 <img
                     src={this.getAndPrepareProps(this.props.source)}
                     alt={this.getAndPrepareProps(this.props.alt)}
                     title={this.getAndPrepareProps(this.props.title)}/>
-            </Helper>
+            </Fragment>
         );
     }
 
