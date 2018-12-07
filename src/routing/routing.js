@@ -1,29 +1,26 @@
 import * as uuid from "uuid";
-import FullPost from "../containers/Blog/FullPost/FullPost";
-import FullPage from "../containers/Blog/FullPage/FullPage";
-import PostsByCategories from "../containers/Blog/PostsByCategories/PostsByCategories";
-import Posts from "../containers/Blog/Posts/Posts";
+import AsyncComponent from "../hoc/AsyncComponent";
 
 export const routes = [
     {
         key: uuid(),
         path: "/post/:slug",
-        component: FullPost
+        component: AsyncComponent(() => import('../containers/Blog/FullPost/FullPost.js'))
     },
     {
         key: uuid(),
         path: "/page/:slug",
-        component: FullPage
+        component: AsyncComponent(() => import('../containers/Blog/FullPage/FullPage'))
     },
     {
         key: uuid(),
         path: "/category/:id/:slug",
-        component: PostsByCategories
+        component: AsyncComponent(() => import('../containers/Blog/PostsByCategories/PostsByCategories'))
     },
     {
         key: uuid(),
         path: "/",
-        component: Posts,
+        component: AsyncComponent(() => import('../containers/Blog/Posts/Posts')),
         exact: true
     },
 ];
