@@ -18,39 +18,45 @@ class SearchPosts extends Component {
             results: [],
             onFocus: false
         };
+        this.timeoutHandler = null;
+    }
+
+    fetchPosts(value) {
+        axios.get('/posts?per_page='+ config.perPage +'&search=' + value)
+            .then(response => response.data)
+            .then(searchResults => {
+                this.setState(prevState => {
+                    const newSearchResults = searchResults.map(result => {
+
+                        let thumbnail = null;
+                        if (result.thumbnail) {
+                            thumbnail = result.thumbnail.fi_50x50;
+                        }
+
+                        return {
+                            title: result.title.rendered,
+                            image: thumbnail,
+                            description: result.post_author.name,
+                            slug: result.slug,
+                            post_id: result.id
+                        };
+                    });
+                    return {
+                        results: newSearchResults
+                    };
+                });
+                this.setState({
+                    isLoading: false
+                });
+            });
     }
 
     onSearchChangeHandler(e, { value }) {
 
         if (value && value !== "" && value !== null) {
             this.setState({isLoading: true});
-            axios.get('/posts?per_page='+ config.perPage +'&search=' + value)
-                .then(response => response.data)
-                .then(searchResults => {
-                    this.setState(prevState => {
-                        const newSearchResults = searchResults.map(result => {
-
-                            let thumbnail = null;
-                            if (result.thumbnail) {
-                                thumbnail = result.thumbnail.fi_50x50;
-                            }
-
-                            return {
-                                title: result.title.rendered,
-                                image: thumbnail,
-                                description: result.post_author.name,
-                                slug: result.slug,
-                                post_id: result.id
-                            };
-                        });
-                        return {
-                            results: newSearchResults
-                        };
-                    });
-                    this.setState({
-                        isLoading: false
-                    });
-                });
+            clearTimeout(this.timeoutHandler);
+            this.timeoutHandler = setTimeout(() => this.fetchPosts(value), 400);
         }
     }
 

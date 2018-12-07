@@ -2,23 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a8843cc2-59ac-4223-942b-e5fc78893bff" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/wordpress-rest-theme.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/wordpress-rest-theme.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/BlogSidebar/BlogSidebar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/BlogSidebar/BlogSidebar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/BlogSidebar/Pages/Page/Page.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/BlogSidebar/Pages/Page/Page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/BlogSidebar/Pages/Pages.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/BlogSidebar/Pages/Pages.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/BlogSidebar/Pages/Pages.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/BlogSidebar/Pages/Pages.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Post/Categories/Category/Category.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Post/Categories/Category/Category.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Posts/PostsList.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Posts/PostsList.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Toolbar/Toolbar.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Toolbar/Toolbar.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Toolbar/Toolbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Toolbar/Toolbar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/Blog/Posts/Posts.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Blog/Posts/Posts.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hoc/Layout/Layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hoc/Layout/Layout.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SearchPosts/SearchPosts.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SearchPosts/SearchPosts.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -35,44 +19,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/Posts/PostsList.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
-              <caret line="16" column="56" selection-start-line="16" selection-start-column="56" selection-end-line="16" selection-end-column="56" />
-              <folding>
-                <element signature="e#0#39#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/Posts/PostsList.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="9" column="39" selection-start-line="9" selection-start-column="39" selection-end-line="9" selection-end-column="39" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/containers/Blog/FullPage/FullPage.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
-              <caret line="69" column="73" lean-forward="true" selection-start-line="69" selection-start-column="8" selection-end-line="69" selection-end-column="73" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/containers/Blog/Posts/Posts.js">
+        <entry file="file://$PROJECT_DIR$/src/components/SearchPosts/SearchPosts.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="334">
-              <caret line="32" column="45" selection-start-line="32" selection-start-column="45" selection-end-line="32" selection-end-column="45" />
-              <folding>
-                <element signature="e#0#39#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="253">
+              <caret line="57" column="46" selection-start-line="57" selection-start-column="46" selection-end-line="57" selection-end-column="46" />
             </state>
           </provider>
         </entry>
@@ -122,7 +73,6 @@
         <option value="$PROJECT_DIR$/src/store/actions/tags.js" />
         <option value="$PROJECT_DIR$/src/containers/Blog/FullPost/FullPost.js" />
         <option value="$PROJECT_DIR$/src/containers/Blog/FullPage/FullPage.js" />
-        <option value="$PROJECT_DIR$/src/components/SearchPosts/SearchPosts.js" />
         <option value="$PROJECT_DIR$/src/components/Post/Tags/Tags.css" />
         <option value="$PROJECT_DIR$/src/components/BlogSidebar/Categories/Categories.js" />
         <option value="$PROJECT_DIR$/src/components/Posts/Posts.js" />
@@ -155,6 +105,7 @@
         <option value="$PROJECT_DIR$/src/components/Post/Categories/Category/Category.js" />
         <option value="$PROJECT_DIR$/src/components/Posts/PostsList.css" />
         <option value="$PROJECT_DIR$/src/containers/Blog/Posts/Posts.js" />
+        <option value="$PROJECT_DIR$/src/components/SearchPosts/SearchPosts.js" />
       </list>
     </option>
   </component>
@@ -193,6 +144,13 @@
               <item name="wordpress-rest-theme" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="wordpress-rest-theme" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wordpress-rest-theme" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="SearchPosts" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="wordpress-rest-theme" type="b2602c69:ProjectViewProjectNode" />
@@ -305,12 +263,12 @@
       <workItem from="1513959303971" duration="14418000" />
       <workItem from="1544187087838" duration="8399000" />
       <workItem from="1544199082243" duration="45000" />
-      <workItem from="1544199132633" duration="6259000" />
+      <workItem from="1544199132633" duration="6618000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="152036000" />
+    <option name="totallyTimeSpent" value="152395000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="36" y="191" width="1739" height="830" extended-state="0" />
@@ -330,7 +288,7 @@
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.43815202" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="10" />
+      <window_info anchor="bottom" id="Version Control" order="10" weight="0.32935917" />
       <window_info anchor="bottom" id="TypeScript" order="11" />
       <window_info anchor="bottom" id="Database Changes" order="12" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
@@ -388,16 +346,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="88">
           <caret line="4" column="43" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/SearchPosts/SearchPosts.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
-          <folding>
-            <element signature="e#0#39#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -686,37 +634,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Posts/PostsList.js">
+    <entry file="file://$PROJECT_DIR$/src/containers/Blog/Posts/Posts.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="16" column="56" selection-start-line="16" selection-start-column="56" selection-end-line="16" selection-end-column="56" />
+        <state relative-caret-position="1449">
+          <caret line="63" column="32" selection-start-line="63" selection-start-column="27" selection-end-line="63" selection-end-column="32" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Posts/PostsList.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="9" column="39" selection-start-line="9" selection-start-column="39" selection-end-line="9" selection-end-column="39" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/containers/Blog/FullPage/FullPage.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="69" column="73" lean-forward="true" selection-start-line="69" selection-start-column="8" selection-end-line="69" selection-end-column="73" />
+        <state relative-caret-position="782">
+          <caret line="63" column="1" lean-forward="true" selection-start-line="63" selection-start-column="1" selection-end-line="63" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/Blog/Posts/Posts.js">
+    <entry file="file://$PROJECT_DIR$/src/components/Posts/PostsList.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="334">
-          <caret line="32" column="45" selection-start-line="32" selection-start-column="45" selection-end-line="32" selection-end-column="45" />
+        <state relative-caret-position="414">
+          <caret line="18" column="11" selection-start-line="18" selection-start-column="7" selection-end-line="18" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Posts/PostsList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="782">
+          <caret line="34" column="38" selection-start-line="34" selection-start-column="29" selection-end-line="34" selection-end-column="38" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/SearchPosts/SearchPosts.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="57" column="46" selection-start-line="57" selection-start-column="46" selection-end-line="57" selection-end-column="46" />
         </state>
       </provider>
     </entry>
