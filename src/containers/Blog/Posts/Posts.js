@@ -1,16 +1,9 @@
 import React, {Component} from 'react';
 import PostsList from '../../../components/Posts/PostsList';
-import { Select } from 'semantic-ui-react';
 import LoadMoreButton from "../../../components/LoadMoreButton/LoadMoreButton";
 import { connect } from 'react-redux';
 import * as actionCreators from '../../../store/actions/index';
 import {calculateOffset} from "../../../utils/utils";
-
-const options = [
-    {key: 1, text: '12', value: 12},
-    {key: 2, text: '18', value: 18},
-    {key: 3, text: '24', value: 24},
-];
 
 class Posts extends Component {
 
@@ -18,7 +11,7 @@ class Posts extends Component {
         super(...arguments);
         this.state = {
             offset: 0,
-            perPage: options[0].value,
+            perPage: 12,
             pageNumber: 1,
             isLoadingLoadMoreButton: false
         }
@@ -31,16 +24,8 @@ class Posts extends Component {
     loadPosts() {
         this.props.showPreloader();
         this.props.fetchPosts(this.state.perPage, this.state.offset)
-            .then(() => this.props.hidePreloader());
-    }
-
-    onChangePerPageHandler(e, select) {
-        this.props.showPreloader();
-        this.props.fetchPosts(select.value, this.state.offset)
-            .then(() => {
-                this.setState({perPage: select.value});
-                this.props.hidePreloader();
-            });
+            .then(() => this.props.hidePreloader())
+            .catch(() => this.props.hidePreloader());
     }
 
     loadMore() {
@@ -59,18 +44,21 @@ class Posts extends Component {
 
     render() {
 
+        const {posts} = this.props;
+        const {isLoadingLoadMoreButton, perPage} = this.state;
+
         return (
             <div className="Posts">
-                <h1>Latest posts</h1>
-                <div>
-                    <Select options={options} placeholder={this.state.perPage.toString()} onChange={this.onChangePerPageHandler.bind(this)} />
-                </div>
+                <h1>Najnowsze wpisy</h1>
                 <div className="Posts-list">
-                    <PostsList posts={this.props.posts} />
+                    <PostsList posts={posts} />
                 </div>
-                <LoadMoreButton
-                    isLoading={this.state.isLoadingLoadMoreButton}
-                    click={this.loadMore.bind(this)}>Pokaż więcej</LoadMoreButton>
+                {posts && posts.length && posts.length >= perPage ?
+                    <LoadMoreButton
+                    label="Pokaż więcej"
+                    isLoading={isLoadingLoadMoreButton}
+                    click={this.loadMore.bind(this)} /> : null}
+
             </div>
         );
     }

@@ -7,6 +7,7 @@ export const HIDE_BLOG_SIDEBAR = 'HIDE_BLOG_SIDEBAR';
 /* Posts actions */
 export const FETCH_POSTS = 'FETCH_POSTS';
 export const FETCH_NEXT_POSTS = 'FETCH_NEXT_POSTS';
+export const CLEAR_POSTS = 'CLEAR_POSTS';
 /* Pages */
 export const FETCH_PAGES = 'FETCH_PAGES';
 /* Categories */

@@ -7,6 +7,10 @@ import {parseDate} from "../../utils/utils";
 
 class Post extends Component {
 
+    getExcerpt(length = 100) {
+        return this.props.post.excerpt.rendered.slice(0, length) + "..."
+    }
+
     render() {
 
         let thumbnail = <Image
@@ -29,10 +33,9 @@ class Post extends Component {
                     <div className="content">
                         <a className="header">{this.props.post.title.rendered}</a>
                         <div className="meta">
-                            <span>{parseDate(this.props.post.date)}</span>
-                            <strong>{this.props.post.post_author.name}</strong>
+                            <strong>Autor: {this.props.post.post_author.name}</strong>
                         </div>
-                        <div className="description" dangerouslySetInnerHTML={{__html:this.props.post.excerpt.rendered.slice(0, 100)}} />
+                        <div className="description" dangerouslySetInnerHTML={{__html:this.getExcerpt()}} />
                     </div>
                     <div className="extra content">
                         <a>

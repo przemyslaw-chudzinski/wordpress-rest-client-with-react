@@ -10,7 +10,8 @@ export {
 
 export {
     fetchPosts,
-    fetchNextPosts
+    fetchNextPosts,
+    clearPosts
 } from './posts';
 
 export {

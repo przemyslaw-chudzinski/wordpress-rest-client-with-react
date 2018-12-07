@@ -44,3 +44,9 @@ export const fetchNextPosts = (perPage, offset, categoryId = null) => {
             });
     };
 };
+
+export const clearPosts = () => {
+    return {
+        type: actionTypes.CLEAR_POSTS
+    };
+};

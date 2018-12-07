@@ -5,11 +5,8 @@ import {connect} from 'react-redux';
 import * as actionCreators from '../../../store/actions/index';
 import LoadMoreButton from "../../../components/LoadMoreButton/LoadMoreButton";
 import {calculateOffset} from "../../../utils/utils";
-
-
-const config = {
-    perPage: 12
-};
+import './PostsByCategories.css';
+import CategoryHeader from "../../../components/CategoryHeader/CategoryHeader";
 
 class PostsByCategories extends Component {
 
@@ -18,7 +15,7 @@ class PostsByCategories extends Component {
         this.state = {
             category: null,
             offset: 0,
-            perPage: config.perPage,
+            perPage: 12,
             isLoadingLoadMoreButton: false,
             pageNumber: 1
         };
@@ -26,6 +23,7 @@ class PostsByCategories extends Component {
 
     componentWillReceiveProps(nextProps) {
         if (nextProps.match.params.id !== this.props.match.params.id) {
+            this.props.clearPosts();
             this.loadCategory(nextProps.match.params.slug)
                 .then(() => {
                     this.loadPosts(nextProps.match.params.id)
@@ -78,20 +76,19 @@ class PostsByCategories extends Component {
     }
 
     render() {
-        if (this.state.category && this.props.posts && this.props.posts.length) {
-            return (
-                <div>
-                    <h1>Wpisy w kategorii: <strong>{this.state.category.name}</strong></h1>
-                    <div>
-                        <PostsList posts={this.props.posts}/>
-                    </div>
-                    {this.state.category.count > this.state.perPage ? <LoadMoreButton
-                        isLoading={this.state.isLoadingLoadMoreButton}
-                        click={this.loadMore.bind(this)}>Pokaż więcej</LoadMoreButton> : null}
-                </div>
-            );
-        }
-        return null;
+
+        const {category, perPage} = this.state;
+        const {posts} = this.props;
+
+        return (
+            <div className="PostsByCategories">
+                {category ? (
+                    <CategoryHeader title={category.name} description={category.description} />
+                ) : null}
+                {posts && posts.length ? <PostsList posts={posts}/> : <p>Brak wpisów do wyświetlenia</p>}
+                {posts && posts.length >= perPage ? <LoadMoreButton click={this.loadMore.bind(this)}/> : null}
+            </div>
+        );
     }
 
 }
@@ -108,7 +105,8 @@ const mapDispatchToProps = dispatch => {
         showPreloader: () => dispatch(actionCreators.showPreloader()),
         hidePreloader: () => dispatch(actionCreators.hidePreloader()),
         fetchNextPosts: (perPage, offset, categoryId) => dispatch(actionCreators.fetchNextPosts(perPage, offset, categoryId)),
-        hideBlogSidebar: () => dispatch(actionCreators.hideBlogSidebar())
+        hideBlogSidebar: () => dispatch(actionCreators.hideBlogSidebar()),
+        clearPosts: () => dispatch(actionCreators.clearPosts())
     };
 };
 

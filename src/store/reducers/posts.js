@@ -17,6 +17,11 @@ const postsReducer = (state = initialState, action) => {
                 ...state,
                 posts: state.posts.concat(action.posts)
             };
+        case actionTypes.CLEAR_POSTS:
+            return {
+                ...state,
+                posts: []
+            };
         default:
             return state;
     }

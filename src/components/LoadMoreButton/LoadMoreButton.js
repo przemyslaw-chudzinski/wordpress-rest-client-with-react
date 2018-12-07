@@ -6,13 +6,17 @@ import './LoadMoreButton.css';
 class LoadMoreButton extends Component {
 
     render() {
+
+        const { click, isLoading, label, disabled } = this.props;
+
         return (
             <Button
                 fluid
+                disabled={disabled}
                 className="LoadMoreButton"
-                onClick={this.props.click.bind(this)}
-                loading={this.props.isLoading}>
-                {this.props.children}
+                onClick={click.bind(this)}
+                loading={isLoading}>
+                {label}
             </Button>
         );
     }
@@ -21,7 +25,9 @@ class LoadMoreButton extends Component {
 
 LoadMoreButton.propTypes = {
     isLoading: PropTypes.bool,
-    click: PropTypes.func
+    click: PropTypes.func,
+    label: PropTypes.string,
+    disabled: PropTypes.bool
 };
 
 export default LoadMoreButton;
