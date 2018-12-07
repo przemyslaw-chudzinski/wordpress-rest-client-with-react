@@ -4,6 +4,9 @@ import Image from "../../../components/Image/Image";
 import * as actionCreators from '../../../store/actions/index';
 import {connect} from 'react-redux';
 import {goToTopPage} from "../../../utils/utils";
+import {endpoints} from "../../../api/endpoints";
+
+const {pageEndpoints} = endpoints;
 
 class FullPage extends Component {
 
@@ -26,7 +29,7 @@ class FullPage extends Component {
 
     loadPage(pageSlug = null) {
         this.props.showPreloader();
-        return pageSlug && pageSlug !== '' ? axios.get('/pages?slug=' + pageSlug)
+        return pageSlug && pageSlug !== '' ? axios.get(pageEndpoints.single(pageSlug))
             .then(response => response.data[0])
             .then(page => {
                 this.setState({page: page});

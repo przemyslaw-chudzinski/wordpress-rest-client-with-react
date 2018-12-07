@@ -1,19 +1,20 @@
 import * as actionTypes from './actionTypes';
 import axios from 'axios';
+import {endpoints} from '../../api/endpoints';
+
+const {categoryEndpoints} = endpoints;
 
 export const fetchCategoriesAction = (categories) => {
     return {
         type: actionTypes.FETCH_CATEGORIES,
-        categories: categories
+        categories
     };
 };
 
 export const fetchCategories = () => {
-    return dispatch => {
-        return axios.get('/categories')
-            .then(response => response.data)
-            .then(categories => {
-                dispatch(fetchCategoriesAction(categories));
-            });
-    };
+    return dispatch => axios.get(categoryEndpoints.list())
+        .then(response => response.data)
+        .then(categories => {
+            dispatch(fetchCategoriesAction(categories));
+        });
 };

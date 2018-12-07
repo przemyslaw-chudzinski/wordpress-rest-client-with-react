@@ -9,6 +9,9 @@ import {connect} from 'react-redux';
 import * as actionCreators from '../../../store/actions/index';
 import Image from "../../../components/Image/Image";
 import {goToTopPage, parseDate} from "../../../utils/utils";
+import {endpoints} from "../../../api/endpoints";
+
+const {postEndpoints} = endpoints;
 
 class FullPost extends Component {
 
@@ -40,7 +43,7 @@ class FullPost extends Component {
 
     loadPost(postSlug = null) {
         this.props.showPreloader();
-        return postSlug && postSlug !== '' ? axios.get('/posts?slug=' + postSlug)
+        return postSlug && postSlug !== '' ? axios.get(postEndpoints.single(postSlug))
             .then(response => response.data[0])
             .then(post => {
                 this.setState({post: post});
