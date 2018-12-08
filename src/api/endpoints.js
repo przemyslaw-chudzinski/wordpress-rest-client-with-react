@@ -18,5 +18,9 @@ export const endpoints = {
     pageEndpoints: {
         list: (per_page = null, offset = null) => '/pages' + assignQueryParams({per_page, offset}),
         single: slug => '/pages' + assignQueryParams({slug})
+    },
+    commentEndpoints: {
+        list: (per_page = null, offset = null, post = null) => '/comments' + assignQueryParams({per_page, offset, post}),
+        create: () => '/comments'
     }
 };

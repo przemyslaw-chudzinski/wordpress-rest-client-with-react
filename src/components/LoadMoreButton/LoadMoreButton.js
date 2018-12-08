@@ -6,7 +6,7 @@ import './LoadMoreButton.css';
 export const LoadMoreButton = props => <Button
     fluid
     disabled={props.disabled}
-    className="LoadMoreButton"
+    className={"LoadMoreButton " + props.className}
     onClick={event => props.click(event)}
     loading={props.isLoading}>
     {props.label}
@@ -16,7 +16,8 @@ LoadMoreButton.propTypes = {
     isLoading: PropTypes.bool,
     click: PropTypes.func,
     label: PropTypes.string,
-    disabled: PropTypes.bool
+    disabled: PropTypes.bool,
+    className: PropTypes.string
 };
 
 export default LoadMoreButton;

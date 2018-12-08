@@ -10,6 +10,7 @@ import * as actionCreators from '../../../store/actions/index';
 import Image from "../../../components/Image/Image";
 import {goToTopPage, parseDate} from "../../../utils/utils";
 import {endpoints} from "../../../api/endpoints";
+import Comments from "../../../components/Comments/Comments";
 
 const {postEndpoints} = endpoints;
 
@@ -75,6 +76,8 @@ class FullPost extends Component {
                 <div className="ui divider" />
                 {/* Post content */}
                 <div className="content" dangerouslySetInnerHTML={{__html:post.content.rendered}} />
+                {/* Comments */}
+                <Comments postId={post.id} disabled={!post.comments.allow}/>
                 {/* About author */}
                 <About author={post.post_author}/>
                 {/* Toolbar on the bottom of the page */}
