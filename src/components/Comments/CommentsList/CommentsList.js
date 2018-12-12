@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import './CommentsList.css';
-import {Comment} from "semantic-ui-react";
+import {Comment, Message} from "semantic-ui-react";
 
 class CommentsList extends Component {
 
@@ -23,7 +23,7 @@ class CommentsList extends Component {
                     </Comment.Content>
                 </Comment>)}
             </div>
-        ) : <p>Brak komentarzy</p>
+        ) : <Message info header='There is no any comments' content="Write as a first one" />
     }
 }
 

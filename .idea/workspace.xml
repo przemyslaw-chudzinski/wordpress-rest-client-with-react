@@ -2,15 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a8843cc2-59ac-4223-942b-e5fc78893bff" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/Comments/AddCommentForm/AddCommentForm.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Comments/Comments.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Comments/Comments.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Comments/CommentsList/CommentsList.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Comments/CommentsList/CommentsList.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/endpoints.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/endpoints.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/LoadMoreButton/LoadMoreButton.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LoadMoreButton/LoadMoreButton.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/Blog/FullPost/FullPost.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Blog/FullPost/FullPost.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Comments/Comments.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Comments/Comments.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Comments/CommentsList/CommentsList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Comments/CommentsList/CommentsList.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -26,111 +20,44 @@
     <fileColor scope="Non-Project Files (Material Oceanic)" color="2E3C43" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.8218543">
-      <split-first>
-        <leaf>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/containers/Blog/FullPost/FullPost.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="276">
-                  <caret line="79" column="72" selection-start-line="79" selection-start-column="53" selection-end-line="79" selection-end-column="72" />
-                  <folding>
-                    <element signature="e#0#39#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/components/Comments/Comments.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="460">
-                  <caret line="26" column="26" lean-forward="true" selection-start-line="26" selection-start-column="26" selection-end-line="26" selection-end-column="26" />
-                  <folding>
-                    <element signature="e#0#39#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/api/endpoints.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="529">
-                  <caret line="23" column="33" selection-start-line="23" selection-start-column="33" selection-end-line="23" selection-end-column="33" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/components/Comments/CommentsList/CommentsList.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="575">
-                  <caret line="25" column="19" selection-start-line="25" selection-start-column="15" selection-end-line="25" selection-end-column="19" />
-                  <folding>
-                    <element signature="e#0#39#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/components/Comments/AddCommentForm/AddCommentForm.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="161">
-                  <caret line="7" column="85" lean-forward="true" selection-start-line="7" selection-start-column="85" selection-end-line="7" selection-end-column="85" />
-                  <folding>
-                    <element signature="e#0#38#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/components/LoadMoreButton/LoadMoreButton.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="184">
-                  <caret line="8" column="50" selection-start-line="8" selection-start-column="50" selection-end-line="8" selection-end-column="50" />
-                  <folding>
-                    <element signature="e#0#26#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/containers/Blog/Posts/Posts.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="230">
-                  <caret line="57" column="35" selection-start-line="57" selection-start-column="21" selection-end-line="57" selection-end-column="35" />
-                  <folding>
-                    <element signature="e#0#39#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/components/Comments/Comments.css">
-              <provider selected="true" editor-type-id="text-editor">
-                <state>
-                  <caret column="25" selection-start-column="25" selection-end-column="25" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/components/Comments/CommentsList/CommentsList.css">
-              <provider selected="true" editor-type-id="text-editor" />
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/components/Comments/Comments.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="451">
+              <caret line="27" column="18" selection-start-line="27" selection-start-column="18" selection-end-line="27" selection-end-column="18" />
+              <folding>
+                <element signature="e#0#39#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/Comments/CommentsList/CommentsList.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="658">
+              <caret line="31" column="2" lean-forward="true" selection-start-line="31" selection-start-column="2" selection-end-line="31" selection-end-column="2" />
+              <folding>
+                <element signature="e#0#39#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/containers/Blog/FullPost/FullPost.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="207">
+              <caret line="79" column="41" selection-start-line="79" selection-start-column="39" selection-end-line="79" selection-end-column="41" />
+              <folding>
+                <element signature="e#0#39#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -204,9 +131,9 @@
         <option value="$PROJECT_DIR$/src/components/LoadMoreButton/LoadMoreButton.js" />
         <option value="$PROJECT_DIR$/src/components/Comments/Comments.css" />
         <option value="$PROJECT_DIR$/src/components/Comments/CommentsList/CommentsList.css" />
-        <option value="$PROJECT_DIR$/src/components/Comments/CommentsList/CommentsList.js" />
         <option value="$PROJECT_DIR$/src/api/endpoints.js" />
         <option value="$PROJECT_DIR$/src/components/Comments/AddCommentForm/AddCommentForm.js" />
+        <option value="$PROJECT_DIR$/src/components/Comments/CommentsList/CommentsList.js" />
         <option value="$PROJECT_DIR$/src/components/Comments/Comments.js" />
       </list>
     </option>
@@ -229,6 +156,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -251,28 +179,6 @@
               <item name="wordpress-rest-theme" type="b2602c69:ProjectViewProjectNode" />
               <item name="wordpress-rest-theme" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="Comments" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="wordpress-rest-theme" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wordpress-rest-theme" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="Comments" type="462c0819:PsiDirectoryNode" />
-              <item name="AddCommentForm" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="wordpress-rest-theme" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wordpress-rest-theme" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="LoadMoreButton" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="wordpress-rest-theme" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wordpress-rest-theme" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="containers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -281,6 +187,14 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="containers" type="462c0819:PsiDirectoryNode" />
               <item name="Blog" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="wordpress-rest-theme" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wordpress-rest-theme" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="containers" type="462c0819:PsiDirectoryNode" />
+              <item name="Blog" type="462c0819:PsiDirectoryNode" />
+              <item name="FullPost" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="wordpress-rest-theme" type="b2602c69:ProjectViewProjectNode" />
@@ -294,7 +208,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -359,12 +272,14 @@
       <workItem from="1513959303971" duration="14418000" />
       <workItem from="1544187087838" duration="8399000" />
       <workItem from="1544199082243" duration="45000" />
-      <workItem from="1544199132633" duration="30044000" />
+      <workItem from="1544199132633" duration="30153000" />
+      <workItem from="1544275948431" duration="123000" />
+      <workItem from="1544646322035" duration="2372000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="175821000" />
+    <option name="totallyTimeSpent" value="178425000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="32" width="1936" height="1056" extended-state="6" />
@@ -777,22 +692,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/Blog/FullPost/FullPost.js">
+    <entry file="file://$PROJECT_DIR$/src/components/Comments/Comments.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="79" column="72" selection-start-line="79" selection-start-column="53" selection-end-line="79" selection-end-column="72" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
+        <state>
+          <caret column="25" selection-start-column="25" selection-end-column="25" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/Blog/Posts/Posts.js">
+    <entry file="file://$PROJECT_DIR$/src/api/endpoints.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="57" column="35" selection-start-line="57" selection-start-column="21" selection-end-line="57" selection-end-column="35" />
+        <state relative-caret-position="529">
+          <caret line="23" column="33" selection-start-line="23" selection-start-column="33" selection-end-line="23" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Comments/AddCommentForm/AddCommentForm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="7" column="85" lean-forward="true" selection-start-line="7" selection-start-column="85" selection-end-line="7" selection-end-column="85" />
           <folding>
-            <element signature="e#0#39#0" expanded="true" />
+            <element signature="e#0#38#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -807,47 +726,43 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Comments/Comments.css">
+    <entry file="file://$PROJECT_DIR$/src/containers/Blog/Posts/Posts.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="25" selection-start-column="25" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Comments/CommentsList/CommentsList.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Comments/CommentsList/CommentsList.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="575">
-          <caret line="25" column="19" selection-start-line="25" selection-start-column="15" selection-end-line="25" selection-end-column="19" />
+        <state relative-caret-position="230">
+          <caret line="57" column="35" selection-start-line="57" selection-start-column="21" selection-end-line="57" selection-end-column="35" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Comments/AddCommentForm/AddCommentForm.js">
+    <entry file="file://$PROJECT_DIR$/src/components/Comments/CommentsList/CommentsList.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/Blog/FullPost/FullPost.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="7" column="85" lean-forward="true" selection-start-line="7" selection-start-column="85" selection-end-line="7" selection-end-column="85" />
+        <state relative-caret-position="207">
+          <caret line="79" column="41" selection-start-line="79" selection-start-column="39" selection-end-line="79" selection-end-column="41" />
           <folding>
-            <element signature="e#0#38#0" expanded="true" />
+            <element signature="e#0#39#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/api/endpoints.js">
+    <entry file="file://$PROJECT_DIR$/src/components/Comments/CommentsList/CommentsList.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="529">
-          <caret line="23" column="33" selection-start-line="23" selection-start-column="33" selection-end-line="23" selection-end-column="33" />
+        <state relative-caret-position="658">
+          <caret line="31" column="2" lean-forward="true" selection-start-line="31" selection-start-column="2" selection-end-line="31" selection-end-column="2" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Comments/Comments.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="26" column="26" lean-forward="true" selection-start-line="26" selection-start-column="26" selection-end-line="26" selection-end-column="26" />
+        <state relative-caret-position="451">
+          <caret line="27" column="18" selection-start-line="27" selection-start-column="18" selection-end-line="27" selection-end-column="18" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>

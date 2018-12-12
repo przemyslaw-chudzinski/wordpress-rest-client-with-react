@@ -21,11 +21,11 @@ class Comments extends Component {
     }
 
     componentWillReceiveProps(nextProps, nextContext) {
-        this.setState({
+        nextProps.postId !== this.props.postId ? this.setState({
             showCommentsList: false,
             comments: [],
             loading: false
-        });
+        }) : null;
     }
 
     handleClick() {
