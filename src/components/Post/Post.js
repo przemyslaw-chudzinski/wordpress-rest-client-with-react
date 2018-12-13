@@ -30,7 +30,7 @@ export const Post = props => {
             <div className="extra content">
                 <a>
                     <i className="comments icon"></i>
-                    22 Comments
+                    {post.comments.count.all || 0}
                 </a>
             </div>
             {/* Post categories */}

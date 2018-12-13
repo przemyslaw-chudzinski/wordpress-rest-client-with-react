@@ -4,8 +4,10 @@ import {Form, Button} from 'semantic-ui-react';
 
 const AddCommentForm = props =>
     <Fragment>
-        <Form.TextArea />
-        <Button content='Dodaj komentarz' labelPosition='left' icon='edit' primary />
+        <Form>
+            <Form.TextArea placeholder="Write a comment" />
+            <Button content='Dodaj komentarz' labelPosition='left' icon='edit' primary />
+        </Form>
     </Fragment>;
 
 AddCommentForm.propTypes = {

@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component, Fragment} from 'react';
 import PropTypes from 'prop-types';
 import './Comments.css';
 import LoadMoreButton from "../LoadMoreButton/LoadMoreButton";
@@ -6,6 +6,7 @@ import { Message } from 'semantic-ui-react'
 import CommentsList from "./CommentsList/CommentsList";
 import axios from 'axios';
 import {endpoints} from "../../api/endpoints";
+import AddCommentForm from "./AddCommentForm/AddCommentForm";
 
 const {commentEndpoints} = endpoints;
 
@@ -31,14 +32,12 @@ class Comments extends Component {
     handleClick() {
         this.setState({loading: true});
         this.loadComments()
-            .then(() => this.setState({loading: false, showCommentsList: true}));
+            .then(comments => this.setState({loading: false, showCommentsList: true, comments}));
     }
 
     loadComments() {
         return axios.get(commentEndpoints.list(10, 0, this.props.postId))
-            .then(response => {
-                console.log(response);
-            });
+            .then(response => response.data);
     }
 
     addComment(data = {}) {
@@ -62,8 +61,12 @@ class Comments extends Component {
         const showCommentsButton = <LoadMoreButton label="Zobacz dyskusję" click={this.handleClick.bind(this)} isLoading={loading}/>;
         return !disabled ?  (
             <div className="Comments">
-                {showCommentsList ? <CommentsList comments={comments} /> : showCommentsButton}
-                <button onClick={this.addComment.bind(this)}>Dodaj komentarz</button>
+                {showCommentsList ? (
+                    <Fragment>
+                        <CommentsList comments={comments} />
+                        <AddCommentForm />
+                    </Fragment>
+                ) : showCommentsButton}
             </div>
         ) : disabledMessage;
     }
