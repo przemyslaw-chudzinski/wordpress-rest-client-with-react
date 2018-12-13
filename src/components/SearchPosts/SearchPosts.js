@@ -46,7 +46,9 @@ class SearchPosts extends Component {
         }
     }
 
-    onResultSelectHandler(e, { result }) {
+    onResultSelectHandler(e, {result}) {
+        e.preventDefault();
+        e.stopPropagation();
         const {history} = this.props;
         result.slug && result.slug !== "" && history.push({pathname: '/post/' + result.slug});
     }

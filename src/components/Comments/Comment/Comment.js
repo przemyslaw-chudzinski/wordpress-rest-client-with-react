@@ -2,15 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {Comment} from "semantic-ui-react";
 
-const SingleComment = props => (
+const SingleComment = ({comment}) => comment && (
     <Comment>
         <Comment.Avatar src='https://react.semantic-ui.com/images/avatar/small/matt.jpg' />
         <Comment.Content>
-            <Comment.Author as='a'>Matt</Comment.Author>
+            <Comment.Author as='a'>{comment.author_name}</Comment.Author>
             <Comment.Metadata>
-                <div>Today at 5:42PM</div>
+                <div>{comment.date}</div>
             </Comment.Metadata>
-            <Comment.Text>How artistic!</Comment.Text>
+            <Comment.Text dangerouslySetInnerHTML={{__html: comment.content.rendered}} />
             <Comment.Actions>
                 <Comment.Action>Reply</Comment.Action>
             </Comment.Actions>
@@ -19,7 +19,7 @@ const SingleComment = props => (
 );
 
 SingleComment.propTypes = {
-    comment: PropTypes.any.required
+    comment: PropTypes.any
 };
 
 export default SingleComment;

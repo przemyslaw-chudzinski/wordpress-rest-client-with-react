@@ -55,7 +55,7 @@ class Comments extends Component {
     }
 
     render() {
-        const {disabled, postId} = this.props;
+        const {disabled} = this.props;
         const {showCommentsList, comments, loading} = this.state;
         const disabledMessage = <Message warning header='Dyskusja pod tym wpisem została wyłączona' content='Autor tego artykułu wyłączył możliwośc komentowania'/>;
         const showCommentsButton = <LoadMoreButton label="Zobacz dyskusję" click={this.handleClick.bind(this)} isLoading={loading}/>;
@@ -73,7 +73,6 @@ class Comments extends Component {
 }
 
 Comments.propTypes = {
-    postId: PropTypes.number.required,
     disabled: PropTypes.bool
 };
 
