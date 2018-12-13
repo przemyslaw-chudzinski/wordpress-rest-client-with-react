@@ -88,7 +88,7 @@ class PostsByCategories extends Component {
                     <CategoryHeader title={category.name} description={category.description} />
                 ) : null}
                 {posts && posts.length ? <PostsList posts={posts}/> : <p>Brak wpisów do wyświetlenia</p>}
-                {posts && posts.length >= perPage ? <LoadMoreButton click={this.loadMore.bind(this)}/> : null}
+                {posts && posts.length >= perPage ? <LoadMoreButton label="Pokaż więcej" click={this.loadMore.bind(this)}/> : null}
             </div>
         );
     }
