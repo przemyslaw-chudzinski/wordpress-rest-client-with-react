@@ -1,14 +1,16 @@
 import React, {Component, Fragment} from 'react';
-import { Button, Header, Icon, Modal, Form } from 'semantic-ui-react';
+import { Button, Header, Icon, Modal, Form, Message } from 'semantic-ui-react';
 import * as actionCreators from '../../../store/actions/index';
 import {connect} from "react-redux";
+import PropTypes from 'prop-types';
 
 class SignIn extends Component {
     constructor() {
         super();
         this.state = {
             username: '',
-            password: ''
+            password: '',
+            showMessage: false
         };
     }
 
@@ -22,21 +24,14 @@ class SignIn extends Component {
     }
 
     submit() {
+        this.setState({showMessage: false});
         const data = {...this.state};
         this.props.singInUser(data)
-            .then(data => console.log(data));
-    }
-
-    success(response) {
-        console.log(response);
-    }
-
-    error(errResponse) {
-        console.log(errResponse);
+            .catch(() => this.setState({showMessage: true}));
     }
 
     close() {
-
+        this.props.handleClose && this.props.handleClose();
     }
 
     render() {
@@ -44,6 +39,9 @@ class SignIn extends Component {
             <Fragment>
                 <Header icon='archive' content='Sign In' />
                 <Modal.Content>
+                    {this.state.showMessage && (<Message negative>
+                        <p>Wrong user name or password</p>
+                    </Message>)}
                     <Form>
                         <Form.Field>
                             <label>User Name</label>
@@ -56,7 +54,7 @@ class SignIn extends Component {
                     </Form>
                 </Modal.Content>
                 <Modal.Actions>
-                    <Button basic color='red'>
+                    <Button basic color='red' onClick={this.close.bind(this)}>
                         <Icon name='remove' /> Cancel
                     </Button>
                     <Button color='green' onClick={this.submit.bind(this)} disabled={!this.validate()}>
@@ -75,6 +73,10 @@ const mapDispatchToProps = dispatch => {
     return {
         singInUser: credentials => dispatch(actionCreators.signIn(credentials))
     };
+};
+
+SignIn.propTypes = {
+    handleClose: PropTypes.func
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(SignIn);

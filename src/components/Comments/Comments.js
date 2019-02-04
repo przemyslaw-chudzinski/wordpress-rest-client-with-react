@@ -51,7 +51,7 @@ class Comments extends Component {
             <div className="Comments">
                 {showCommentsList ? (
                     <Fragment>
-                        <CommentsList comments={comments} />
+                        <CommentsList comments={comments} postId={postId} user={userStore.user} />
                         {userStore.user ? <AddCommentForm postId={postId} user={userStore.user} commentCreated={this.loadComments.bind(this)}/> : <AuthModal/>}
                     </Fragment>
                 ) : showCommentsButton}

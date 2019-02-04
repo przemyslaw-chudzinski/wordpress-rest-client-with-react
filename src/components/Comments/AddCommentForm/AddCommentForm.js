@@ -9,8 +9,7 @@ class AddCommentForm extends Component {
     constructor() {
         super();
         this.state = {
-            content: '',
-            postId: null
+            content: ''
         };
     }
 
@@ -19,8 +18,8 @@ class AddCommentForm extends Component {
     }
 
     submit() {
-        const {postId, user} = this.props;
-        const data = {...this.state, post: postId};
+        const {postId, user, parentId} = this.props;
+        const data = {...this.state, post: postId, parent: parentId};
         axios.post('/comments', data, {
             headers: {
                 Authorization: 'Bearer ' + user.token
@@ -58,7 +57,8 @@ class AddCommentForm extends Component {
 AddCommentForm.propTypes = {
     postId: PropTypes.number,
     user: PropTypes.object,
-    commentCreated: PropTypes.func
+    commentCreated: PropTypes.func,
+    parentId: PropTypes.number
 };
 
 export default AddCommentForm;
