@@ -6,7 +6,6 @@ import SingleComment from "../Comment/Comment";
 
 const CommentsList = ({comments, user, postId}) => comments && comments.length ? (
     <div className="CommentsList">
-        {console.log('from comment list', postId)}
         <Comment.Group>
             {comments.map(comment => <SingleComment key={comment.id} postId={postId} comment={comment} parentId={comment.id} user={user} />)}
         </Comment.Group>

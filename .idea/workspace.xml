@@ -3,10 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="a8843cc2-59ac-4223-942b-e5fc78893bff" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Auth/AuthModal/SignIn.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Auth/AuthModal/SignIn.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Comments/AddCommentForm/AddCommentForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Comments/AddCommentForm/AddCommentForm.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Comments/Comment/Comment.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Comments/Comment/Comment.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Comments/Comments.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Comments/Comments.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Comments/CommentsList/CommentsList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Comments/CommentsList/CommentsList.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -24,11 +21,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/Comments/Comment/Comment.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="47" column="158" selection-start-line="47" selection-start-column="158" selection-end-line="47" selection-end-column="158" />
+            <state relative-caret-position="621">
+              <caret line="45" column="128" selection-start-line="45" selection-start-column="128" selection-end-line="45" selection-end-column="128" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -39,8 +36,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/Comments/AddCommentForm/AddCommentForm.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="276">
-              <caret line="21" column="69" selection-start-line="21" selection-start-column="69" selection-end-line="21" selection-end-column="69" />
+            <state relative-caret-position="161">
+              <caret line="22" column="39" selection-start-line="22" selection-start-column="38" selection-end-line="22" selection-end-column="39" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -48,11 +45,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/Comments/CommentsList/CommentsList.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="276">
-              <caret line="16" column="28" lean-forward="true" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
+            <state relative-caret-position="69">
+              <caret line="7" column="34" selection-start-line="7" selection-start-column="34" selection-end-line="7" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -147,8 +144,8 @@
         <option value="$PROJECT_DIR$/src/components/Auth/AuthModal/AuthModal.js" />
         <option value="$PROJECT_DIR$/src/components/Comments/Comments.js" />
         <option value="$PROJECT_DIR$/src/components/Comments/AddCommentForm/AddCommentForm.js" />
-        <option value="$PROJECT_DIR$/src/components/Comments/CommentsList/CommentsList.js" />
         <option value="$PROJECT_DIR$/src/components/Comments/Comment/Comment.js" />
+        <option value="$PROJECT_DIR$/src/components/Comments/CommentsList/CommentsList.js" />
       </list>
     </option>
   </component>
@@ -279,18 +276,18 @@
       <workItem from="1548345455560" duration="68000" />
       <workItem from="1548345574580" duration="4486000" />
       <workItem from="1548410085136" duration="26000" />
-      <workItem from="1549273946552" duration="16439000" />
+      <workItem from="1549273946552" duration="16777000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="207399000" />
+    <option name="totallyTimeSpent" value="207737000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="32" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19509594" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19509594" />
       <window_info id="Structure" order="1" weight="0.24955331" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -302,7 +299,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.26086956" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.26086956" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.32935917" />
       <window_info anchor="bottom" id="TypeScript" order="11" />
@@ -701,30 +698,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Comments/CommentsList/CommentsList.js">
+    <entry file="file://$PROJECT_DIR$/src/components/Comments/Comment/Comment.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="16" column="28" lean-forward="true" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
+        <state relative-caret-position="621">
+          <caret line="45" column="128" selection-start-line="45" selection-start-column="128" selection-end-line="45" selection-end-column="128" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Comments/AddCommentForm/AddCommentForm.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="21" column="69" selection-start-line="21" selection-start-column="69" selection-end-line="21" selection-end-column="69" />
+        <state relative-caret-position="161">
+          <caret line="22" column="39" selection-start-line="22" selection-start-column="38" selection-end-line="22" selection-end-column="39" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Comments/Comment/Comment.js">
+    <entry file="file://$PROJECT_DIR$/src/components/Comments/CommentsList/CommentsList.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="47" column="158" selection-start-line="47" selection-start-column="158" selection-end-line="47" selection-end-column="158" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="69">
+          <caret line="7" column="34" selection-start-line="7" selection-start-column="34" selection-end-line="7" selection-end-column="34" />
         </state>
       </provider>
     </entry>

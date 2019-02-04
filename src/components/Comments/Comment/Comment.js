@@ -43,7 +43,7 @@ class SingleComment extends Component {
                     {this.state.childrenComments && this.state.childrenComments.length ? <CommentsList postId={postId} user={user} comments={this.state.childrenComments}/> : null}
 
                     <Comment.Actions>
-                        <Comment.Action onClick={this.showForm.bind(this)}>Reply</Comment.Action>
+                        {!this.state.showForm ? <Comment.Action onClick={this.showForm.bind(this)}>Reply</Comment.Action> : null}
                         {!this.state.childrenComments || !this.state.childrenComments.length ? <Comment.Action onClick={this.showChildren.bind(this)}>Show answers</Comment.Action> : null}
                         {this.state.showForm && <AddCommentForm user={user} postId={postId} parentId={comment.id} commentCreated={this.fetchChildren.bind(this)}/>}
                     </Comment.Actions>
