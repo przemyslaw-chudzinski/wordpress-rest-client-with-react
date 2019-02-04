@@ -7,6 +7,8 @@ import CommentsList from "./CommentsList/CommentsList";
 import axios from 'axios';
 import {endpoints} from "../../api/endpoints";
 import AddCommentForm from "./AddCommentForm/AddCommentForm";
+import AuthModal from "../Auth/AuthModal/AuthModal";
+import {connect} from "react-redux";
 
 const {commentEndpoints} = endpoints;
 
@@ -31,31 +33,17 @@ class Comments extends Component {
 
     handleClick() {
         this.setState({loading: true});
-        this.loadComments()
-            .then(comments => this.setState({loading: false, showCommentsList: true, comments}));
+        this.loadComments();
     }
 
     loadComments() {
         return axios.get(commentEndpoints.list(10, 0, this.props.postId))
-            .then(response => response.data);
-    }
-
-    addComment(data = {}) {
-        data = {
-            post: this.props.postId,
-            content: 'Ale fajny artykuł'
-        };
-        return axios.post(commentEndpoints.create(), data)
-            .then(response => console.log(response))
-            .catch(err => console.log(err));
-    }
-
-    handleSubmit() {
-
+            .then(response => response.data)
+            .then(comments => this.setState({loading: false, showCommentsList: true, comments}));
     }
 
     render() {
-        const {disabled} = this.props;
+        const {disabled, userStore, postId} = this.props;
         const {showCommentsList, comments, loading} = this.state;
         const disabledMessage = <Message warning header='Dyskusja pod tym wpisem została wyłączona' content='Autor tego artykułu wyłączył możliwośc komentowania'/>;
         const showCommentsButton = <LoadMoreButton label="Zobacz dyskusję" click={this.handleClick.bind(this)} isLoading={loading}/>;
@@ -64,7 +52,7 @@ class Comments extends Component {
                 {showCommentsList ? (
                     <Fragment>
                         <CommentsList comments={comments} />
-                        <AddCommentForm />
+                        {userStore.user ? <AddCommentForm postId={postId} user={userStore.user} commentCreated={this.loadComments.bind(this)}/> : <AuthModal/>}
                     </Fragment>
                 ) : showCommentsButton}
             </div>
@@ -73,7 +61,12 @@ class Comments extends Component {
 }
 
 Comments.propTypes = {
-    disabled: PropTypes.bool
+    disabled: PropTypes.bool,
+    postId: PropTypes.number
 };
 
-export default Comments;
+const mapStateToProps = state => ({
+    userStore: state.user
+});
+
+export default connect(mapStateToProps, null)(Comments);

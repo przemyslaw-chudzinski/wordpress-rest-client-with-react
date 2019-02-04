@@ -1,17 +1,64 @@
-import React, {Fragment} from 'react';
+import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {Form, Button} from 'semantic-ui-react';
+import axios from 'axios';
+import './AddCommentForm.css';
 
-const AddCommentForm = props =>
-    <Fragment>
-        <Form>
-            <Form.TextArea placeholder="Write a comment" />
-            <Button content='Dodaj komentarz' labelPosition='left' icon='edit' primary />
-        </Form>
-    </Fragment>;
+class AddCommentForm extends Component {
+
+    constructor() {
+        super();
+        this.state = {
+            content: '',
+            postId: null
+        };
+    }
+
+    handleChange(key, event) {
+        this.setState({[key]: event.target.value});
+    }
+
+    submit() {
+        const {postId, user} = this.props;
+        const data = {...this.state, post: postId};
+        axios.post('/comments', data, {
+            headers: {
+                Authorization: 'Bearer ' + user.token
+            }
+        })
+            .then(response => this.success(response))
+            .catch(err => this.error(err));
+    }
+
+    success(response) {
+        this.setState({content: ''});
+        this.props.commentCreated && this.props.commentCreated();
+    }
+
+    error(response) {
+
+    }
+
+    validate() {
+        const {content} = this.state;
+        return content && content.length > 0;
+    }
+
+    render() {
+        return (
+            <Form className="AddCommentForm">
+                <Form.TextArea name="content" placeholder="Write a comment" value={this.state.content} onChange={this.handleChange.bind(this, 'content')} />
+                <Button content='Dodaj komentarz' labelPosition='left' icon='edit' primary onClick={this.submit.bind(this)} disabled={!this.validate()} />
+            </Form>
+        );
+    }
+
+}
 
 AddCommentForm.propTypes = {
-    onSubmit: PropTypes.func
+    postId: PropTypes.number,
+    user: PropTypes.object,
+    commentCreated: PropTypes.func
 };
 
 export default AddCommentForm;

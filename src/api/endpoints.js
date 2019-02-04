@@ -22,5 +22,8 @@ export const endpoints = {
     commentEndpoints: {
         list: (per_page = null, offset = null, post = null) => '/comments' + assignQueryParams({per_page, offset, post}),
         create: () => '/comments'
+    },
+    authEndpoints: {
+        singIn: () => 'http://localhost/wordpress-rest-api/wp-json/jwt-auth/v1/token'
     }
 };

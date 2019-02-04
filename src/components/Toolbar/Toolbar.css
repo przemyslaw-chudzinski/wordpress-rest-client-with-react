@@ -24,3 +24,14 @@
         display: block !important;
     }
 }
+
+.Toolbar .right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Toolbar .right .user-data {
+    margin-left: 1rem;
+    margin-right: 1rem;
+}

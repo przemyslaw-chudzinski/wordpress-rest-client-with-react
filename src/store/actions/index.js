@@ -25,3 +25,8 @@ export {
 export {
     fetchTags
 } from './tags';
+
+export {
+    signIn,
+    logOut
+} from './auth';

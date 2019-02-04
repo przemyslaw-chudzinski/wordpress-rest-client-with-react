@@ -4,7 +4,8 @@ import {Blog} from "./containers/Blog/Blog";
 import {BrowserRouter} from 'react-router-dom';
 
 class App extends Component {
-  render() {
+
+    render() {
     return (
         <BrowserRouter>
             <Layout>
@@ -14,5 +15,4 @@ class App extends Component {
     );
   }
 }
-
 export default App;

@@ -14,6 +14,7 @@ import pagesReducer from "./store/reducers/pages";
 import categoriesReducer from "./store/reducers/categories";
 import tagsReducer from "./store/reducers/tags";
 import axios from 'axios';
+import authReducer from "./store/reducers/auth";
 
 
 const baseURL = process.env.NODE_ENV === 'development' ? 'http://localhost/wordpress-rest-api/wp-json/wp/v2' : '';
@@ -26,7 +27,8 @@ const rootReducer = combineReducers({
     blogSidebar: blogSidebarReducer,
     pages: pagesReducer,
     categories: categoriesReducer,
-    tags: tagsReducer
+    tags: tagsReducer,
+    user: authReducer
 });
 
 const store = createStore(rootReducer, applyMiddleware(thunk));

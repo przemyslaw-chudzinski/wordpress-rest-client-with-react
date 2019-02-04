@@ -14,3 +14,6 @@ export const FETCH_PAGES = 'FETCH_PAGES';
 export const FETCH_CATEGORIES = 'FETCH_CATEGORIES';
 /* Tags */
 export const FETCH_TAGS = 'FETCH_TAGS';
+/* Auth */
+export const AUTH_USER = 'AUTH_USER';
+export const AUTH_LOG_OUT = 'AUTH_LOG_OUT';
