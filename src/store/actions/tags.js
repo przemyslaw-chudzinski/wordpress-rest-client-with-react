@@ -1,8 +1,5 @@
 import * as actionTypes from './actionTypes';
-import axios from 'axios';
-import {endpoints} from "../../api/endpoints";
-
-const {tagEndpoints} = endpoints;
+import TagService from "../../api/tagService";
 
 export const fetchTagsAction = (tags) => {
     return {
@@ -11,10 +8,7 @@ export const fetchTagsAction = (tags) => {
     };
 };
 
-export const fetchTags = () => {
-    return dispatch => axios.get(tagEndpoints.list())
-        .then(response => response.data)
-        .then(tags => {
-            dispatch(fetchTagsAction(tags));
-        });
-};
+export const fetchTags = () => dispatch => TagService.fetch()
+    .then(tags => {
+        dispatch(fetchTagsAction(tags));
+    });

@@ -1,8 +1,5 @@
 import * as actionTypes from './actionTypes';
-import axios from 'axios';
-import {endpoints} from '../../api/endpoints';
-
-const {categoryEndpoints} = endpoints;
+import CategoryService from "../../api/categoryService";
 
 export const fetchCategoriesAction = (categories) => {
     return {
@@ -11,10 +8,5 @@ export const fetchCategoriesAction = (categories) => {
     };
 };
 
-export const fetchCategories = () => {
-    return dispatch => axios.get(categoryEndpoints.list())
-        .then(response => response.data)
-        .then(categories => {
-            dispatch(fetchCategoriesAction(categories));
-        });
-};
+export const fetchCategories = () => dispatch => CategoryService.fetch()
+    .then(categories => categories.length ? dispatch(fetchCategoriesAction(categories)) : dispatch([]));

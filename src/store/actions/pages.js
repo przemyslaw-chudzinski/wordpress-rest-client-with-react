@@ -1,8 +1,5 @@
 import * as actionTypes from './actionTypes';
-import axios from 'axios';
-import {endpoints} from "../../api/endpoints";
-
-const {pageEndpoints} = endpoints;
+import PageService from "../../api/pageService";
 
 export const fetchPagesAction = (pages) => {
     return {
@@ -11,12 +8,7 @@ export const fetchPagesAction = (pages) => {
     };
 };
 
-export const fetchPages = () => {
-    return dispatch => {
-        return axios.get(pageEndpoints.list())
-            .then(response => response.data)
-            .then(pages => {
-                dispatch(fetchPagesAction(pages));
-            });
-    }
-};
+export const fetchPages = () => dispatch => PageService.fetch()
+    .then(pages => {
+        dispatch(fetchPagesAction(pages));
+    });

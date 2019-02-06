@@ -1,8 +1,5 @@
 import * as actionTypes from './actionTypes';
-import axios from "axios";
-import {endpoints} from "../../api/endpoints";
-
-const {postEndpoints} = endpoints;
+import PostService from "../../api/postService";
 
 export const fetchPostsAction = (posts) => {
     return {
@@ -11,17 +8,8 @@ export const fetchPostsAction = (posts) => {
     };
 };
 
-export const fetchPosts = (perPage, offset, categoryId = null) => {
-    return dispatch => axios.get(postEndpoints.list(perPage, offset, categoryId))
-        .then(response => response.data)
-        .then(posts => {
-            if (posts.length) {
-                dispatch(fetchPostsAction(posts));
-            } else {
-                console.log('wywołać wyjątek albo błąd')
-            }
-        });
-};
+export const fetchPosts = (perPage, offset, categoryId = null) => dispatch => PostService.fetch(perPage, offset, categoryId)
+    .then(posts => posts.length ? dispatch(fetchPostsAction(posts)) : dispatch(fetchPostsAction([])));
 
 export const fetchNextPostsAction = (posts) => {
     return {
@@ -31,18 +19,8 @@ export const fetchNextPostsAction = (posts) => {
 };
 
 
-export const fetchNextPosts = (perPage, offset, categoryId = null) => {
-    return dispatch => axios.get('/posts?per_page=' + perPage + '&offset=' + offset + (categoryId ? '&categories=' + categoryId : ''))
-        .then(response => response.data)
-        .then(posts => {
-            if (posts.length) {
-                dispatch(fetchNextPostsAction(posts));
-            } else {
-                console.log('wywołać wyjątek albo błąd !!!!!!!!!!!!!!!!!!')
-            }
-        });
-};
-
+export const fetchNextPosts = (perPage, offset, categoryId = null) => dispatch => PostService.fetch(perPage, offset, categoryId)
+    .then(posts => posts.length && dispatch(fetchNextPostsAction(posts)));
 export const clearPosts = () => {
     return {
         type: actionTypes.CLEAR_POSTS

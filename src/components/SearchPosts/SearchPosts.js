@@ -22,6 +22,7 @@ class SearchPosts extends Component {
     }
 
     fetchPosts(value) {
+        // TODO: Refaktoring
         return axios.get('/posts?per_page='+ config.perPage +'&search=' + value)
             .then(response => response.data)
             .then(searchResults => {
