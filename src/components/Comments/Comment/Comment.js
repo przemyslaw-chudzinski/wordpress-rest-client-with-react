@@ -69,7 +69,7 @@ class SingleComment extends Component {
 
                     <Comment.Actions>
                         {!this.state.showForm ? <Comment.Action onClick={this.showForm.bind(this)}>Reply</Comment.Action> : null}
-                        {!this.state.childrenComments || !this.state.childrenComments.length ? <Comment.Action onClick={this.showChildren.bind(this)}>Show answers</Comment.Action> : null}
+                        {comment.has_children ? <Comment.Action onClick={this.showChildren.bind(this)}>Show answers</Comment.Action> : null}
                         {this.state.showForm && user && <AddCommentForm user={user} postId={postId} parentId={comment.id} commentCreated={this.fetchChildren.bind(this, this.state.offset, comment.id)}/>}
                         <div>
                             {this.state.showForm && !user && <AuthModal />}
