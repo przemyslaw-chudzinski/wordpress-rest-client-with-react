@@ -15,6 +15,6 @@ export const goToTopPage = () => {
     }
 };
 
-export const calculateOffset = currentState => {
-    return (currentState.pageNumber - 1) * currentState.perPage;
+export const calculateOffset = ({pageNumber, perPage}) => {
+    return (pageNumber - 1) * perPage;
 };

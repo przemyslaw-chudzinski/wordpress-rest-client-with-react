@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {Form, Button} from 'semantic-ui-react';
-import axios from 'axios';
 import './AddCommentForm.css';
+import CommentService from '../../../api/commentService';
 
 class AddCommentForm extends Component {
 
@@ -20,11 +20,7 @@ class AddCommentForm extends Component {
     submit() {
         const {postId, user, parentId} = this.props;
         const data = {...this.state, post: postId, parent: parentId};
-        axios.post('/comments', data, {
-            headers: {
-                Authorization: 'Bearer ' + user.token
-            }
-        })
+        CommentService.create(data, user.token)
             .then(response => this.success(response))
             .catch(err => this.error(err));
     }
