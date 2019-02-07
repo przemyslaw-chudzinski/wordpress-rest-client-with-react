@@ -1,18 +1,12 @@
 import * as actionTypes from './actionTypes';
-import axios from "axios";
-import {endpoints} from "../../api/endpoints";
-
-
-const {authEndpoints} = endpoints;
+import AuthService from "../../api/authService";
 
 export const signInAction = user => ({
     type: actionTypes.AUTH_USER,
     user
 });
 
-
-export const signIn = credentials => dispatch => axios.post(authEndpoints.singIn(), credentials)
-    .then(response => response.data)
+export const signIn = credentials => dispatch => AuthService.signIn(credentials)
     .then(user => user && dispatch(signInAction(user)))
     .then(user => localStorage.setItem('auth_user', JSON.stringify(user.user)));
 
