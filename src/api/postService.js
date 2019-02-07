@@ -5,8 +5,8 @@ const {postEndpoints} = endpoints;
 
 class PostService {
 
-    static fetch(perPage, offset, categoryId = null) {
-        return axios.get(postEndpoints.list(perPage, offset, categoryId))
+    static fetch(perPage, offset, categoryId = null, search = null) {
+        return axios.get(postEndpoints.list(perPage, offset, categoryId, search))
             .then(response => response.data);
     }
 

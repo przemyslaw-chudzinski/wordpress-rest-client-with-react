@@ -18,9 +18,9 @@ export const fetchNextPostsAction = (posts) => {
     };
 };
 
-
 export const fetchNextPosts = (perPage, offset, categoryId = null) => dispatch => PostService.fetch(perPage, offset, categoryId)
     .then(posts => posts.length && dispatch(fetchNextPostsAction(posts)));
+
 export const clearPosts = () => {
     return {
         type: actionTypes.CLEAR_POSTS

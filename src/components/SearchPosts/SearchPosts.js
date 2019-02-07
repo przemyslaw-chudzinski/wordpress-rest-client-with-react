@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import {Search} from 'semantic-ui-react';
-import axios from 'axios';
 import './SearchPosts.css';
 import {withRouter} from 'react-router-dom';
+import PostService from "../../api/postService";
 
 const config = {
     perPage: 5,
@@ -22,19 +22,15 @@ class SearchPosts extends Component {
     }
 
     fetchPosts(value) {
-        // TODO: Refaktoring
-        return axios.get('/posts?per_page='+ config.perPage +'&search=' + value)
-            .then(response => response.data)
+        return PostService.fetch(config.perPage, 0, null, value)
             .then(searchResults => {
-                const results = searchResults && searchResults.length && searchResults.map(result => {
-                    return {
-                        title: result.title.rendered,
-                        image: result.thumbnail ? result.thumbnail.fi_50x50 : null,
-                        description: result.post_author.name,
-                        slug: result.slug,
-                        post_id: result.id
-                    };
-                });
+                const results = searchResults && searchResults.length && searchResults.map(result => ({
+                    title: result.title.rendered,
+                    image: result.thumbnail ? result.thumbnail.fi_50x50 : null,
+                    description: result.post_author.name,
+                    slug: result.slug,
+                    post_id: result.id
+                }));
                 this.setState({results, isLoading: false});
             });
     }

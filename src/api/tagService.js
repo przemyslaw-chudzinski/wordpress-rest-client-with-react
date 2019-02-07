@@ -6,7 +6,6 @@ const {tagEndpoints} = endpoints;
 
 class TagService {
 
-
     static fetch() {
         return axios.get(tagEndpoints.list())
             .then(response => response.data);

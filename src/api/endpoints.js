@@ -1,12 +1,12 @@
 const assignQueryParams = (params = {}) => {
     const keys = Object.keys(params);
-    let queryString = keys.length ? keys.map(key => params[key] !== null && `${key}=${params[key]}`).join('&') : '';
+    let queryString = keys.length ? keys.map(key => params[key] !== null ? `${key}=${params[key]}` : '').join('&') : '';
     return queryString && queryString.length ? `?${queryString}` : '';
 };
 
 export const endpoints = {
     postEndpoints: {
-        list: (per_page = null, offset = null, categories = null) => '/posts' + assignQueryParams({per_page, offset, categories}),
+        list: (per_page = null, offset = null, categories = null, search = null) => '/posts' + assignQueryParams({per_page, offset, categories, search}),
         single: slug => '/posts' + assignQueryParams({slug})
     },
     categoryEndpoints: {

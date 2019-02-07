@@ -9,6 +9,4 @@ export const fetchPagesAction = (pages) => {
 };
 
 export const fetchPages = () => dispatch => PageService.fetch()
-    .then(pages => {
-        dispatch(fetchPagesAction(pages));
-    });
+    .then(pages => dispatch(fetchPagesAction(pages)));

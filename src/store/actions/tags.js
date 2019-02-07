@@ -9,6 +9,4 @@ export const fetchTagsAction = (tags) => {
 };
 
 export const fetchTags = () => dispatch => TagService.fetch()
-    .then(tags => {
-        dispatch(fetchTagsAction(tags));
-    });
+    .then(tags => dispatch(fetchTagsAction(tags)));
