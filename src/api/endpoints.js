@@ -1,8 +1,5 @@
-const assignQueryParams = (params = {}) => {
-    const keys = Object.keys(params);
-    let queryString = keys.length ? keys.map(key => params[key] !== null ? `${key}=${params[key]}` : '').join('&') : '';
-    return queryString && queryString.length ? `?${queryString}` : '';
-};
+import {assignQueryParams} from "../utils/utils";
+
 
 export const endpoints = {
     postEndpoints: {

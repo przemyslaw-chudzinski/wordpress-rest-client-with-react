@@ -1,8 +1,10 @@
 import $ from 'jquery';
 
 export const parseDate = format => {
+    if (format == null || !format) return null;
     const d = new Date(format);
-    return d.getDate() + '-' + (d.getMonth() + 1) + '-' + d.getFullYear();
+    const month = d.getMonth() + 1;
+    return d.getDate() + '-' + (month < 10 ? '0' + month : month) + '-' + d.getFullYear();
 };
 
 export const goToTopPage = () => {
@@ -16,5 +18,12 @@ export const goToTopPage = () => {
 };
 
 export const calculateOffset = ({pageNumber, perPage}) => {
-    return (pageNumber - 1) * perPage;
+    return typeof pageNumber === 'number' && typeof perPage === 'number' ? (pageNumber - 1) * perPage : null;
+};
+
+export const assignQueryParams = (params = {}) => {
+    const keys = params ? Object.keys(params) : [];
+    const paramsArr = keys.length ? keys.map(key => params[key] !== null ? `${key}=${params[key]}` : null).filter(key => key) : [];
+    const queryString = paramsArr && paramsArr.length ? paramsArr.join('&') : '';
+    return queryString && queryString.length ? `?${queryString}` : '';
 };
