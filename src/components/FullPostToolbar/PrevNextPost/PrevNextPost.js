@@ -13,7 +13,7 @@ export const PrevNextPost = props => {
             <h4>{direction === 'prev' ? arrow_left : null}{post ? post.title : null} {direction === 'next' ? arrow_right : null}</h4>
         </div>
     ) : <div className="PrevNext" />;
-}
+};
 
 PrevNextPost.propTypes = {
     post: PropTypes.object,
