@@ -3,7 +3,7 @@ import axios from 'axios';
 import './FullPost.css';
 import About from "../../../components/Post/About/About";
 import Categories from "../../../components/Post/Categories/Categories";
-import FullPostToolbar from "../../../components/FullPostToolbar/FullPostToolbar";
+import {FullPostToolbar} from "../../../components/FullPostToolbar/FullPostToolbar";
 import Tags from "../../../components/Post/Tags/Tags";
 import {connect} from 'react-redux';
 import * as actionCreators from '../../../store/actions/index';
