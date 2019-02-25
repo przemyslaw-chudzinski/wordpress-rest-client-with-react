@@ -6,7 +6,7 @@ import * as actionCreators from '../../../store/actions/index';
 import LoadMoreButton from "../../../components/LoadMoreButton/LoadMoreButton";
 import {calculateOffset} from "../../../utils/utils";
 import './PostsByCategories.css';
-import CategoryHeader from "../../../components/CategoryHeader/CategoryHeader";
+import {CategoryHeader} from "../../../components/CategoryHeader/CategoryHeader";
 
 class PostsByCategories extends Component {
 

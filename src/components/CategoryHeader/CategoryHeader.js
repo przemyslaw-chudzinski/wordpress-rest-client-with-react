@@ -1,18 +1,17 @@
 import React from 'react';
 import './CategoryHeader.css';
 import PropTypes from 'prop-types';
-import h1 from "eslint-plugin-jsx-a11y/src/util/implicitRoles/h1";
 
-export const CategoryHeader = props => (
+export const CategoryHeader = ({title, description, imageUrl, imageAlt}) => (
     <div className="CategoryHeader">
-        {props.image ? (
+        {imageUrl && imageUrl.length ? (
             <div className="image">
-                <img src={props.image} alt=""/>
+                <img src={imageUrl} alt={imageAlt || ''}/>
             </div>
         ) : null}
         <div className="content">
-            <h1>Kategoria: {props.title}</h1>
-            {props.description ? <p>{props.description}</p> : null}
+            {title && title.length ? <h1 className="CategoryHeader__title">Kategoria: {title}</h1> : null}
+            {description && description.length ? <p className="CategoryHeader__description">{description}</p> : null}
         </div>
     </div>
 );
@@ -20,7 +19,6 @@ export const CategoryHeader = props => (
 CategoryHeader.propTypes = {
     title: PropTypes.string,
     description: PropTypes.string,
-    image: PropTypes.string
+    imageUrl: PropTypes.string,
+    imageAlt: PropTypes.string
 };
-
-export default CategoryHeader;

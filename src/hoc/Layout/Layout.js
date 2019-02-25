@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Toolbar from "../../components/Toolbar/Toolbar";
+import {Toolbar} from "../../components/Toolbar/Toolbar";
 import './Layout.css';
 import Preloader from '../../components/Preloader/Preloader';
 import BlogSidebar from "../../components/BlogSidebar/BlogSidebar";
