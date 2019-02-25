@@ -10,7 +10,7 @@ import {connect} from "react-redux";
 import {calculateOffset} from '../../utils/utils';
 import CommentService from '../../api/commentService';
 
-class Comments extends Component {
+export class Comments extends Component {
 
     constructor() {
         super();
@@ -84,7 +84,7 @@ class Comments extends Component {
 
 Comments.propTypes = {
     disabled: PropTypes.bool,
-    postId: PropTypes.number
+    postId: PropTypes.number.isRequired
 };
 
 const mapStateToProps = state => ({

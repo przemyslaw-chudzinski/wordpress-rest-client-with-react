@@ -5,9 +5,9 @@ import * as actionCreators from "../../store/actions";
 import {connect} from "react-redux";
 import './LoggedUserInfo.css';
 
-const LoggedUserInfo = ({userStore, logOut}) => userStore && userStore.user && (
+export const LoggedUserInfo = ({userStore, logOut}) => userStore && userStore.user && (
     <div className="LoggedUserInfo">
-        <div className="user-data">{userStore.user.user_display_name}</div>
+        {userStore.user.user_display_name && userStore.user.user_display_name.length ? <div className="user-data LoggedUserInfo__user-name">{userStore.user.user_display_name}</div> : null}
         <Button className="LogoutButton" icon onClick={event => isCallable(logOut) && logOut(event)}>
             <Icon name='power' />
         </Button>
