@@ -27,3 +27,5 @@ export const assignQueryParams = (params = {}) => {
     const queryString = paramsArr && paramsArr.length ? paramsArr.join('&') : '';
     return queryString && queryString.length ? `?${queryString}` : '';
 };
+
+export const isCallable = expr => expr && typeof expr === 'function';

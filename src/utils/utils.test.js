@@ -1,4 +1,4 @@
-import {calculateOffset, parseDate, assignQueryParams} from './utils';
+import {calculateOffset, parseDate, assignQueryParams, isCallable} from './utils';
 
 describe('calculateOffset', () => {
 
@@ -43,7 +43,7 @@ describe('parseDate', () => {
     });
 
     it('should return 23-02-2019 when passed argument equals 1550927551425', () => {
-        const result = parseDate(Date.now());
+        const result = parseDate(1550927551425);
         expect(result).toBe('23-02-2019');
     });
 
@@ -86,6 +86,20 @@ describe('assignQueryParams', () => {
         expect(result).toBe('?per_page=10');
     });
 
+
+});
+
+describe('isCallable', () => {
+
+    it('should return true when function reference is passed', () => {
+        const fn = () => {};
+        expect(isCallable(fn)).toBeTruthy();
+    });
+
+    it('should return false when function reference is not passed', () => {
+        const fn = '';
+        expect(isCallable(fn)).toBeFalsy();
+    });
 
 });
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import {shallow, configure} from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
+import sinon from 'sinon';
 import PrevNextPost from "./PrevNextPost";
 import {Icon} from 'semantic-ui-react';
 
@@ -30,6 +31,19 @@ describe('PrevNextPost component', () => {
     it('should contain <Icon name="chevron right" as="i" /> component when direction prop equals next', () => {
         wrapper.setProps({direction: 'next'});
         expect(wrapper.contains(<Icon name="chevron right" as="i" />)).toBeTruthy();
+    });
+
+    it('should call goToPost method on click event when this method is passed', () => {
+        const onComponentClick = sinon.spy();
+        wrapper.setProps({goToPost: onComponentClick});
+        wrapper.find('.PrevNext').simulate('click');
+        expect(onComponentClick.callCount).toBe(1);
+    });
+
+    it('should not call goToPost method on click event when this method is not passed', () => {
+        const onComponentClick = sinon.spy();
+        wrapper.find('.PrevNext').simulate('click');
+        expect(onComponentClick.callCount).toBe(0);
     });
 
 
