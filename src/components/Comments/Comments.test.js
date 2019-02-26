@@ -7,7 +7,6 @@ import {LoadMoreButton} from "../LoadMoreButton/LoadMoreButton";
 import CommentsList from "./CommentsList/CommentsList";
 import AddCommentForm from "./AddCommentForm/AddCommentForm";
 
-
 configure({adapter: new Adapter});
 
 describe('Comments component', () => {
@@ -36,22 +35,6 @@ describe('Comments component', () => {
         wrapper.setState({showCommentsList: true});
         expect(wrapper.find(CommentsList).length).toBe(1);
         expect(wrapper.find(AddCommentForm).length).toBe(1);
-    });
-
-    describe('handleLoadMore method', () => {
-
-        it('should increment pageNumber state when handleLoadMore method has been called', () => {
-            wrapper.setState({pageNumber: 1});
-            wrapper.instance().handleLoadMore();
-            expect(wrapper.state('pageNumber')).toBe(2);
-        });
-
-        it('should get comments list when handleLoadMore method has been called', async () => {
-
-            // TODO: How to test http calls inside of the methods of the component
-
-        });
-
     });
 
 });

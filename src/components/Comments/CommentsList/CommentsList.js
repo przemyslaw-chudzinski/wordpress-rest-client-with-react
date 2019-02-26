@@ -4,7 +4,7 @@ import './CommentsList.css';
 import {Button, Comment, Message} from "semantic-ui-react";
 import SingleComment from "../Comment/Comment";
 
-const CommentsList = ({comments, user, postId, onLoadMore}) => comments && comments.length ? (
+export const CommentsList = ({comments, user, postId, onLoadMore}) => comments && comments.length ? (
     <div className="CommentsList">
         <Comment.Group>
             {comments.map(comment => <SingleComment key={comment.id} postId={postId} comment={comment} parentId={comment.id} user={user} />)}

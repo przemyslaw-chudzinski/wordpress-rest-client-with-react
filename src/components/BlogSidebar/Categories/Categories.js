@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 import Category from "../../Post/Categories/Category/Category";
 import './Categories.css';
 
-export const Categories = props => (
+export const Categories = ({header, categories}) => (
     <div className="Categories">
-        {props.header ? <h3>{props.header}</h3> : null}
+        {header ? <h3>{header}</h3> : null}
         <ul>
-            {props.categories && props.categories.length && props.categories.map(category => <Category key={category.id} category={category}>{category.name}</Category>)}
+            {categories && categories.length && categories.map(category => <Category key={category.id} category={category}>{category.name}</Category>)}
         </ul>
     </div>
 );
